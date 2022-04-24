@@ -13,14 +13,51 @@
 	<link rel="stylesheet" href="../css/style.css">
 
 </head>
-<style>
-
-</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 <body>
-<div class="form">
-    <br>
-    <input type="text" class="search" placeholder="Tu cherches quoi?">
+<div class="form" id="form-id">
+    
+    <input type="text" class="search" name="user_name" required placeholder="Nom Prénom">
+    <input type="text" class="search" name="recipe_name" required placeholder="Recette" >
+    <label for="ingredient-choice">Choisis les ingrédients nécéssaires</label>
+    <input class="search" list="ingredients" id="ingredient-choice" placeholder="Poivron"id="userInput" />
+    
+    <datalist id="ingredients">
+       <option value="Patate">
+        <option value="Oignon-rouge">
+        <option value="Menthe">
+        <option value="Riz">
+        <option value="Citron">>
+    </datalist>
+    <input type="submit" onclick="name()">
 </div>
+<script>
+    $(document).ready(function () {
+    $("#userInput").on("input", function () {
+        var options = {};
+        options.url = "/home/getcompanylist";
+        options.type = "GET";
+        options.data = { "criteria": $("#userInput").val() };
+        options.dataType = "json";
+        options.success = function (data) {
+            $("#ingredients").empty();
+            for(var i=0;i<data.length;i++)
+            {
+                $("#ingredients").append("<option value='" + 
+                data[i].CompanyName + "'></option>");
+            }
+        };
+        $.ajax(options);
+    });
+
+});
+   var input = document.getElementById('userInput').value;
+   var blob=new Blob(["WElcome"],
+   {type:"text/plain;chorset=utf-8"});
+    </script>
+
+
 </body>
 
 <footer>
