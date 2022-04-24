@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.form{
+    text-align:center;
+    max-width: 50%;
+    height: 300px;
+    background-color: rgb(179, 179, 179);
+    margin: 0 auto;
+}
+
+.search{
+    width: 90%;
+    margin:0 auto;
+    height: 40px;
+    background-color: rgb(221, 221, 221);
+}
