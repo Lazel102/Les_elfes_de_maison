@@ -16,13 +16,17 @@
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="java.js"></script>
 <body>
-<div class="form" id="form-id">
+<form class="form" id="form-id">
     
     <input type="text" class="search" name="user_name" required placeholder="Nom Prénom">
-    <input type="text" class="search" name="recipe_name" required placeholder="Recette" >
 
-    <label for="ingredient-choice">Choisis les ingrédients nécéssaires</label>
-    <input class="search" list="ingredients" placeholder="Poivron"id="userInput" >
+    <input type="text" class="search" name="recipe_name" required placeholder="Recette 1" >
+
+   <!-- <label for="ingredient-choice">Choisis les ingrédients nécéssaires</label>-->
+    <input class="search" list="ingredients" placeholder="Poivron"id="userInput" 
+    >
+    <input class="search">
+   
     <!--<datalist id="ingredients">
        <option value="Patate">
         <option value="Oignon-rouge">
@@ -31,7 +35,7 @@
         <option value="Citron">
     </datalist>-->
     <button type="button" onclick="saveStaticDataToFile();">Click to Save</button>
-</div>
+</form>
 <!--<script>
     $(document).ready(function () {
     $("#userInput").on("input", function () {
