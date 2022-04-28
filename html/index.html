@@ -18,23 +18,17 @@
 <body>
 <form class="form" id="form-id">
     
-    <input type="text" class="search" name="user_name" required placeholder="Nom Prénom">
-
-    <input type="text" class="search" name="recipe_name" required placeholder="Recette 1" >
+    <input type="text" class="form-input" name="user_name" required placeholder="Nom Prénom">
+<br>
+<br>
+<div class="form-input recipe">
+    <input type="text" class="recette-input" name="recipe_name" required placeholder="Entres le nom de ta première recette..." >
 
    <!-- <label for="ingredient-choice">Choisis les ingrédients nécéssaires</label>-->
-    <input class="search" list="ingredients" placeholder="Poivron"id="userInput" 
+    <input class="search-input" list="ingredients" placeholder="Cherches un ingrédient..."id="userInput" 
     >
-    <input class="search">
-   
-    <!--<datalist id="ingredients">
-       <option value="Patate">
-        <option value="Oignon-rouge">
-        <option value="Menthe">
-        <option value="Riz">
-        <option value="Citron">
-    </datalist>-->
-    <button type="button" onclick="saveStaticDataToFile();">Click to Save</button>
+</div>
+    <button type="button" onclick="saveStaticDataToFile();">Confirmer</button>
 </form>
 <!--<script>
     $(document).ready(function () {
