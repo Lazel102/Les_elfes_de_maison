@@ -6,8 +6,9 @@
 
 
 body{
-background-color: rgb(185, 242, 160);
-font-family: sans-serif;
+font-family: 'Ubuntu', sans-serif;
+color:#ffffff;
+font-size:14px;
 }
 
 form{
@@ -15,53 +16,114 @@ form{
     border-radius:25px;
     text-align:center;
     max-width: 40%;
-    height: 300px;
-    background-color: rgb(77, 195, 75);
+    height:auto;
+    background-image: linear-gradient(#8ab661,#61b15a);
     margin: 0 auto;
     margin-top:50px;
-    box-shadow: 0px 0px 6px 0px;
+    /*box-shadow: 0px 0px 6px 0px;*/
 }
 
-input .form-input, .form-input{
+/*input .form-input, .form-input{
     padding: 10px 10px 10px 10px;
     border-radius: 15px;
-    border:solid 1px grey;
+    border:none;
     width: 100%;
     margin:0 auto;
     margin-bottom:5px;
-    background-color: rgb(185 242 160);
-}
+}*/
 
 input:focus-visible{
-    border:solid 1px grey;
+    border:none;
+    border-radius: none;
     background-color:unset
 }
+input.recette-input {
+margin: 0 auto;
+ }
+ .recette-input::placeholder {
+    color: #fff;
+ }
+ .recette-input:-ms-input-placeholder {
+    color: #fff;
+ }
+ .recette-input::-ms-input-placeholder {
+    color: #fff;
+ }
+  
 
 .recette-input{
     background-color: unset;
-    border-radius: 15px;
-    color:Black;
+    font-style: italic;
     border:0px;
     padding-left: 5px;
-    border-bottom:solid 1px grey;
+    border-bottom:solid 1px #e0e6e6;
     width: 100%;
     margin:0 auto;
     margin-bottom:5px;
     height: 25px;
 }
 
-.search-input{
-    margin:0 auto;
-    width:100%;
-    padding-left: 10px;
+.form-input{
+    padding: 5px 10px;
+    background-color: #ffffff;
     border-radius: 15px;
-    border:solid 1px grey;
-    width: 100%;
-    margin:0 auto;
-    margin-bottom:5px;
-    height: auto;
+    height:70px;
+}
+.input-line{
+    padding:5px 0;
+    display:inline-flex;
+    width:100%;
+    border-bottom:solid 1px #a5aab1;
+    color:#a5aab1;
 }
 
-.recipe{
-    height:auto;
+.search-input{
+    width:100%;
+ margin: 0 auto;
+    height: auto;
+    background-color: unset;
+    border:none;
+    font-style: italic;
+}
+
+.search-input::placeholder,.qtit::placeholder {
+    color: #a5aab1;
+ }
+ .search-input :-ms-input-placeholder,.qtit :-ms-input-placeholder {
+    color: #a5aab1;
+ }
+ .search-input::-ms-input-placeholder,.qtit ::-ms-input-placeholder {
+    color: #a5aab1;
+ }
+
+ .qtit{
+     width:20px;
+     border:none;
+ }
+ 
+ button.check{
+     padding:0 5px 0 10px;
+border:none;
+color:#a5aab1;
+background-color: unset;
+font-weight: bold;
+border-left:solid 1px #a5aab1;
+ }
+
+table{
+    width:100%;
+    text-align:left;
+    border-collapse: collapse;
+}
+
+th{
+    padding: 20px 0;
+}
+
+tr{
+    border-bottom:solid 0.2px #e0e6e6;
+}
+
+td{
+    padding:5px;
 }
