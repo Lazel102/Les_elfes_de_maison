@@ -67,7 +67,7 @@ margin: 0 auto;
     padding: 5px 10px;
     background-color: #ffffff;
     border-radius: 15px;
-    height:70px;
+    height:auto;
 }
 .input-line{
     padding:5px 0;
@@ -109,6 +109,18 @@ background-color: unset;
 font-weight: bold;
 border-left:solid 1px #a5aab1;
  }
+
+#ingList{
+    padding-top:10px;
+    height: 100px;
+    overflow-y:scroll;
+    text-align: left;
+}
+
+#ingList a{
+color: #a5aab1;
+text-decoration: none;
+}
 
 table{
     width:100%;
