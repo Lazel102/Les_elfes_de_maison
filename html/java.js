@@ -1,5 +1,14 @@
 
-function myFunction() {
+$(document).ready(function(){  
+    $("#suggest").keyup(function(){  
+        $.get("suggest.php", {company: $(this).val()}, function(data){  
+            $("datalist").empty();  
+            $("datalist").html(data);  
+        });  
+    });  
+});  
+
+/*function myFunction() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("userInput");
     filter = input.value.toUpperCase();

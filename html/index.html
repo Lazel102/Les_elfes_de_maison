@@ -27,12 +27,10 @@
     
 
     <input type="text" class="recette-input" name="recipe_name" required placeholder="*Entrez le nom de votre recette n°1...">
-<br>
-<br>
-    <p>Veuillez sélectionner les ingrédients nécessaires à la
+
+    <p id="description">Veuillez sélectionner les ingrédients nécessaires à la
         conception de votre recette pour <b>1 portion.</b></p>
-        <br>
-<br>
+
         <div class="form-input recipe">
    <!-- <label for="ingredient-choice">Choisis les ingrédients nécéssaires</label>-->
   <div class="input-line">  
@@ -54,6 +52,10 @@
     <li><a href="#">Citron</a></li>
     <li><a href="#">Concombre</a></li>
   </ul>
+  <input type="text" list="myCompanies" name="company" id="suggest" />  
+<datalist id="myCompanies">  
+   
+</datalist> 
 </div>
 <div class="reciep">
 <table>
@@ -84,8 +86,8 @@
         <td>UK</td>
       </tr>
 </table>
-</div>
-    <button type="button" onclick="saveStaticDataToFile();">Confirmer</button>
+</div> 
+    <button class="valider" type="button" onclick="saveStaticDataToFile();">Valider</button>
 </form>
 <!--<script>
     $(document).ready(function () {
