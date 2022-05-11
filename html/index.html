@@ -14,11 +14,12 @@
 
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="neo4J.js"></script>
 </head>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="java.js"></script>
@@ -53,9 +54,6 @@
     <li><a href="#">Concombre</a></li>
   </ul>
   <input type="text" list="myCompanies" name="company" id="suggest" />  
-<datalist id="myCompanies">  
-   
-</datalist> 
 </div>
 <div class="reciep">
 <table>
@@ -87,7 +85,7 @@
       </tr>
 </table>
 </div> 
-    <button class="valider" type="button" onclick="saveStaticDataToFile();">Valider</button>
+    <button class="valider"  type="button" onclick="saveStaticDataToFile();">Valider</button>
 </form>
 <!--<script>
     $(document).ready(function () {
@@ -114,6 +112,10 @@
    {type:"text/plain;chorset=utf-8"});
     </script>-->
 
+    <!-- Test Connection Neo4j -->
+    <input type="text"  id="01" />  
+    <input type="text"  id="02" />  
+    <button class="valider"  type="button" onclick="addRecipe();">Valider</button>
 
 </body>
 
