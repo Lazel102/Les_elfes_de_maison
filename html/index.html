@@ -33,9 +33,11 @@
         conception de votre recette pour <b>1 portion.</b></p>
 
         <div class="form-input recipe">
+
    <!-- <label for="ingredient-choice">Choisis les ingrédients nécéssaires</label>-->
+
   <div class="input-line">  
-      <input class="search-input" list="ingredients" placeholder="Recherchez un ingrédient..."id="userInput" onkeyup="myFunction()" 
+      <input class="search-input" list="ingredients" placeholder="Recherchez un ingrédient..." id="userInput"
     >
    <p>x</p> <input class="qtit" placeholder="0" 
     >
@@ -85,32 +87,8 @@
       </tr>
 </table>
 </div> 
-    <button class="valider"  type="button" onclick="saveStaticDataToFile();">Valider</button>
+    <button class="valider" type="button" onclick="saveStaticDataToFile()">Valider</button>
 </form>
-<!--<script>
-    $(document).ready(function () {
-    $("#userInput").on("input", function () {
-        var options = {};
-        options.url = ".../Base_des_données/ingridients.csv";
-        options.type = "GET";
-        options.data = { "criteria": $("#userInput").val() };
-        options.dataType = "csv";
-        options.success = function (data) {
-            $("#ingredients").empty();
-            for(var i=0;i<data.length;i++)
-            {
-                $("#ingredients").append("<option value='" + 
-                data[i].CompanyName + "'></option>");
-            }
-        };
-        $.ajax(options);
-    });
-
-});
-   var input = document.getElementById('userInput').value;
-   var blob=new Blob(["WElcome"],
-   {type:"text/plain;chorset=utf-8"});
-    </script>-->
 
     <!-- Test Connection Neo4j -->
     <input type="text"  id="01" />  

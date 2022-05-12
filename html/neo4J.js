@@ -1,5 +1,12 @@
+function saveStaticDataToFile() {
+
+  var input = document.getElementById('userInput').value;
+  
+  alert(input)
+  } 
+
 function addRecipe(){
-  (async() => {
+
     const neo4j = require('neo4j-driver')
     
     const uri = 'neo4j+s://75cf5522.databases.neo4j.io';
@@ -9,11 +16,13 @@ function addRecipe(){
     const driver = neo4j.driver(uri, neo4j.auth.basic(user, password))
     const session = driver.session()
    
-    const person1Name = document.getElementById('01')
-    const person2Name = document.getElementById('02')
+    const person1Name = document.getElementById('01').value
+    const person2Name = document.getElementById('02').value
     console.log(person1Name)
     console.log(person2Name)
-   
+
+    alert(person1Name)
+    
     try {
       // To learn more about the Cypher syntax, see https://neo4j.com/docs/cypher-manual/current/
       // The Reference Card is also a good resource for keywords https://neo4j.com/docs/cypher-refcard/current/
@@ -51,5 +60,5 @@ function addRecipe(){
    
     // Don't forget to close the driver connection when you're finished with it
     await driver.close()
-   })()
-  };
+   }
+  ;
