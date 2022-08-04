@@ -11,15 +11,50 @@ color:#ffffff;
 font-size:14px;
 }
 
+/* DEFAULTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+
+
+/* ========================================================================== */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  margin: 0;
+
+  background: hsl(0 0% 98%);
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+}
+
+h1 {
+  color: hsla(32 50% 50% / .8);
+
+  position: fixed;
+  left: -100px;
+  top: 50%;
+  margin: 0;
+
+  transform: rotate(-90deg) translateY(-50%);
+}
+
+
+.form-container{
+    display: flex;
+    max-width: 100%;
+}
+
 form{
-    margin: 0 auto;
-    margin-top:50px;
+    margin: 0 15px 0 auto;
     padding:30px;
     max-width: 500px;
     height:auto;
     text-align:center;
     background-image: linear-gradient(#8ab661,#61b15a);
-    border-radius:25px;
+    border-radius:15px;
 
     /*box-shadow: 0px 0px 6px 0px;*/
 }
@@ -163,6 +198,18 @@ button.valider:hover{
     box-shadow: none;
 }
 
+.r-section{
+    display: flex;
+    margin: 0 auto 0 0;
+  max-width: 50%;
+}
+
+.total-reciep{
+    padding: 30px;
+    width:100%;
+    background-image: linear-gradient(#8ab661,#61b15a);
+    border-radius:15px;
+}
 
 
 /* Tablet */
