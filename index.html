@@ -26,10 +26,29 @@
 <body>
 
     <div class="form-container">
+
+        <form class="form" id="form-id">
+    
+            <p id="description">Veuillez compléter les informations suivantes afin de rejoindre un atelier de cuisine :)</p>
+            <input type="text" class="recette-input" name="user_name" required placeholder="*Indiquez votre nom et prénom...">
+<br>
+<br>
+<input type="text" class="recette-input" name="user_adress" required placeholder="*Indiquez votre arrondissement de résidence...">
+<br>
+<br>
+<br>
+            <input type="checkbox" id="kitchen1" name="kitchen1" value="Yes">
+            <label for="kitchen1"> Je<b> peux</b> accueillir un atelier dans ma cuisine </label><br>
+            <input type="checkbox" id="kitchen2" name="kitchen2" value="No">
+            <label for="kitchen2"> Je<b> ne peux pas</b> accueillir un atelier dans ma cuisine </label><br>
+        
+            <button class="valider" type="button" onclick="saveStaticDataToFile()">Suivant</button>
+        </form>
+
 <form class="form" id="form-id">
     
 
-    <input type="text" class="recette-input" name="recipe_name" required placeholder="*Entrez le nom de votre recette n°1...">
+    <input type="text" class="recette-input" name="recipe_name" required placeholder="*Entrez le nom de votre recette n°2...">
 
     <p id="description">Veuillez sélectionner les ingrédients nécessaires à la
         conception de votre recette pour <b>1 portion.</b></p>
@@ -57,7 +76,6 @@
     <li><a href="#">Citron</a></li>
     <li><a href="#">Concombre</a></li>
   </ul>
-  <input type="text" list="myCompanies" name="company" id="suggest" />  
 </div>
 <div class="reciep">
 <table>
@@ -97,8 +115,8 @@
         <img src="">
     </div>
 <div class="total-reciep">
-    <p>Recette n°1:</p>
-    <p>Recette n°2:</p>
+    <p><del>Recette n°1:</del></p>
+    <p class="active">Recette n°2:</p>
     <p>Recette n°3:</p>
 </div>
 </div>

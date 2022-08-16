@@ -8,41 +8,14 @@
 body{
 font-family: 'Ubuntu', sans-serif;
 color:#ffffff;
-font-size:14px;
+font-size:16px !important;
+background-color: #d2e9be;
 }
 
-/* DEFAULTS */
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
-
-
-
-/* ========================================================================== */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  min-height: 100vh;
-  margin: 0;
-
-  background: hsl(0 0% 98%);
-  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', sans-serif;
-}
-
-h1 {
-  color: hsla(32 50% 50% / .8);
-
-  position: fixed;
-  left: -100px;
-  top: 50%;
-  margin: 0;
-
-  transform: rotate(-90deg) translateY(-50%);
-}
 
 
 .form-container{
+    margin-top: 50px;
     display: flex;
     max-width: 100%;
 }
@@ -51,9 +24,9 @@ form{
     margin: 0 15px 0 auto;
     padding:30px;
     max-width: 500px;
-    height:auto;
+    height:fit-content;
     text-align:center;
-    background-image: linear-gradient(#8ab661,#61b15a);
+    background-image: linear-gradient(#98c271,#6eca65);
     border-radius:15px;
 
     /*box-shadow: 0px 0px 6px 0px;*/
@@ -68,25 +41,42 @@ form{
     margin-bottom:5px;
 }*/
 
+input{
+    font-size: 16px;
+    color:#fff
+}
+
 input:focus-visible{
     border:none;
     border-radius: none;
     background-color:unset
 }
+
 input.recette-input {
-margin: 0 auto;
- }
- .recette-input::placeholder {
-    color: #fff;
- }
- .recette-input:-ms-input-placeholder {
-    color: #fff;
- }
- .recette-input::-ms-input-placeholder {
-    color: #fff;
- }
+    margin: 0 auto;
+     }
+     .recette-input::placeholder{
+        color: #fff;
+     }
+     .recette-input:-ms-input-placeholder{
+        color: #fff;
+     }
+     .recette-input::-ms-input-placeholder, .search-input::-ms-input-placeholder {
+        color: #fff;
+     }
   
 
+.search-input::placeholder {
+            color: #fff;
+         }
+.search-input:-ms-input-placeholder {
+            color: #fff;
+         }
+.search-input::-ms-input-placeholder {
+            color: #fff;
+         }
+  
+         
 .recette-input{
     background-color: unset;
     font-style: italic;
@@ -101,7 +91,7 @@ margin: 0 auto;
 
 .form-input{
     padding: 5px 10px;
-    background-color: #ffffff;
+    background-color: #d2e9be;
     border-radius: 15px;
     height:auto;
 }
@@ -115,7 +105,7 @@ margin: 0 auto;
 
 p#description{
     margin: 25px 0 35px;
-    text-align: justify;
+    text-align: left;
     font-weight: lighter;
 }
 
@@ -207,8 +197,15 @@ button.valider:hover{
 .total-reciep{
     padding: 30px;
     width:100%;
-    background-image: linear-gradient(#8ab661,#61b15a);
+    background-image: linear-gradient(#98c271,#6eca65);
     border-radius:15px;
+}
+
+.total-reciep p{
+    margin-bottom: 15px;
+}
+.total-reciep p.active{
+    font-weight: bold;
 }
 
 
