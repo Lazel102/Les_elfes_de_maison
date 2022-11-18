@@ -9,7 +9,7 @@ body{
 font-family: 'Ubuntu', sans-serif;
 color:#ffffff;
 font-size:16px !important;
-background-color: #d2e9be;
+background-color: #eeb02a;
 }
 
 
@@ -26,8 +26,9 @@ form{
     max-width: 500px;
     height:fit-content;
     text-align:center;
-    background-image: linear-gradient(#98c271,#6eca65);
+    background-image: linear-gradient(#6a8b4a,#6eca65);
     border-radius:15px;
+    border:solid 2px white;
 
     /*box-shadow: 0px 0px 6px 0px;*/
 }
