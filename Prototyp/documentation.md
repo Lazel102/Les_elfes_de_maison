@@ -1,8 +1,12 @@
 # Documentation
 
+## Todo
+- Create MySettings.html (homepage)
+
 ## Ideas
 - Recipes can later be added to userprofil.
 - The users within an event will in the future be able to vote for a date.
+- Previous events can later be displayed in each user's profile
 
 ## Notes
 - In the ressources folder in future updates is a folder with possible future templates.
