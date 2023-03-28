@@ -2,8 +2,13 @@ package com.example.prototyp.web;
 
 
 import com.example.prototyp.domain.Event;
+import com.example.prototyp.domain.displayDtos.EventDto;
+import com.example.prototyp.domain.displayDtos.RecipeDto;
 import com.example.prototyp.service.EventService;
-import com.example.prototyp.web.forms.EventForm;
+import com.example.prototyp.domain.forms.EventForm;
+import com.example.prototyp.domain.forms.RecipeForm;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,31 +32,57 @@ public class WebController {
   }
   @GetMapping("/home")
   public String home(UsernamePasswordAuthenticationToken token, Model m){
+    List<EventDto> userEvents= eventService.getUserEvents(token.getName());
+    m.addAttribute("events", userEvents);
     m.addAttribute( "username",token.getName());
     return "home";
   }
   @GetMapping("/joinEvent")
-  public String joinEvent(){
+  public String joinEvent(Model m, UsernamePasswordAuthenticationToken token){
+    List<EventDto> events =  eventService.getJoinableEvents(token.getName());
+    m.addAttribute("events",events);
     return "eventPages/joinEvent";
   }
 
   @GetMapping("/createEvent")
   public String createEvent(Model model){
-    model.addAttribute("eventForm",new EventForm(null,null,null,null) );
+    model.addAttribute("eventForm",new EventForm(null,null,null,null,null) );
     return "eventPages/createEvent";
   }
 
   @PostMapping("/createEvent")
   public String createEvent(@ModelAttribute("eventForm") EventForm eventForm, UsernamePasswordAuthenticationToken token ){
-    Event createdEvent = Event.of(eventForm.date(), eventForm.numberOfParticipants(), token.getName(), eventForm.kitchenImage(), eventForm.kitchenAdress());
+    Event createdEvent = Event.of(eventForm ,token.getName());
     Long id = eventService.saveEvent(createdEvent);
     return "redirect:/event/" + id + "/addRecipe";
   }
   @GetMapping("/event/{eventId}/addRecipe")
-  public String createEvent(@PathVariable("eventId") Long eventId, Model m){
+  public String addRecipe(@PathVariable("eventId") Long eventId, Model m){
+    m.addAttribute("recipeForm", new RecipeForm(null, null, new ArrayList<>(),null, null));
     m.addAttribute("eventId",eventId);
-    m.addAttribute("recipeForm", new RecipeForm())
     return "recipePages/addRecipe";
+  }
+  @PostMapping("/event/{eventId}/addRecipe")
+  public String addRecipe(@PathVariable("eventId") Long eventId, Model m, @ModelAttribute("recipeForm") RecipeForm recipeForm, UsernamePasswordAuthenticationToken token){
+    Event event = eventService.findEventbyId(eventId);
+    event.addRecipe(token.getName(), recipeForm);
+    return "redirect:/home";
+  }
+  @GetMapping("event/{eventId}")
+  public String event( @PathVariable Long eventId, Model m, UsernamePasswordAuthenticationToken token){
+    Event event = eventService.findEventbyId(eventId);
+    List<RecipeDto> recipes= event.getRecipes();
+    m.addAttribute("recipes", recipes);
+    m.addAttribute("event", new EventDto(event));
+    m.addAttribute("showJoinEvent", !event.isParticipant(token.getName()));
+    return "eventPages/event";
+  }
+
+  @PostMapping("event/{eventId}/joinEvent")
+  public String joinEvent(@PathVariable("eventId") Long id, UsernamePasswordAuthenticationToken token){
+    Event event = eventService.findEventbyId(id);
+    event.addParticipant(token.getName());
+    return "event"+id;
   }
 
 }

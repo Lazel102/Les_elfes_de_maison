@@ -7,10 +7,12 @@
 <body>
 <h1>Create Event</h1>
 <form method ="post" th:action="@{createEvent}" th:object ="${eventForm}" >
-
     <br>
-    <label for="date1ID"> First date</label>
-    <input type="date" id="date1ID" required th:field="*{date}">
+    <label for="titleID"> Choose a Title for your Event</label>
+    <input type="text" id="titleID" required th:field="*{title}">
+    <br>
+    <label for="dateID"> Choose a date</label>
+    <input type="date" id="dateID" required th:field="*{date}">
     <br>
     <label for="numberParticipantsID">Number of Participants</label>
     <input type="number" id="numberParticipantsID" required  th:field="*{numberOfParticipants}">

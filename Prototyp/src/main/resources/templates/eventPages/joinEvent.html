@@ -13,18 +13,15 @@
         <input type="text" name="place" id="placeID" placeholder="Place">
         <button type="submit">Filter</button>
     </form>
-<div>
-    <div>
-        <img src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">    
+<div th:remove="all-but-first">
+    <div th:each="event:${events}">
+        <h2 th:text="${event.title}"></h2>
+        <img th:src="@{event.kitchenImage}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
         <ul>
-            <li> 5/6 participants </li>
-            <!--Here we will show the three dates which accumalte the majority of votes-->
-            <li> 05.03.2023  </li>
-            <li> 06.03.2023  </li>
-            <li> 07.03.2023  </li>
-            <li>8 ème (5 km de chez toi) </li>
-            <button type="button" ><a href="event.html">See more</a></button>
-
+            <li th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 participants </li>
+            <li th:text="${event.date}"> 05.03.2023  </li>
+            <li th:text="${event.adress}">8 ème (5 km de chez toi) </li>
+            <button type="button" ><a th:href="@{event/{eventId}(eventId=${event.id})}" href="eventPages/event.html">See more</a></button>
         </ul>
     </div>
     <div>

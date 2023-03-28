@@ -8,4 +8,12 @@ class Kitchen {
     this.adress = adress;
     this.imageUrl=imageUrl;
   }
+
+  public String getImageUrl() {
+    return imageUrl;
+  }
+
+  public String getAdress() {
+    return this.adress;
+  }
 }

@@ -5,29 +5,35 @@
     <title>Event</title>
 </head>
 <body>
-    <h1> Event Example</h1>
+    <h1 th:text="${event.title}"> Event Example</h1>
 
     <div>
-        <img src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">    
-        <ul>
-            <li> 5/6 participants </li>
-            <ul>
-                <li>Robert</li>
-                <li>Yannick</li>
-                <li>Marguerite</li>
-                <li>Yassine</li>
-                <li>Irene</li>
-            </ul>
-            <!--Here we will show the three dates which accumalte the majority of votes-->
-            <li> 05.03.2023  </li>
-            <li> 06.03.2023  </li>
-            <li> 07.03.2023  </li>
-            <li>8 ème (5 km de chez toi) </li>
-            <button type="button">Join event</button>
-            <br>
-            <button type="button"><a href="../home.html">back</a></button>
-
-        </ul>
+        <img th:src="@{event.kitchenImage}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
     </div>
+    <div>
+        <h2> When is the event ?</h2>
+        <span th:text="${event.date}"> 05.03.2023</span>
+    </div>
+    <div>
+        <h2> Who participates ?</h2>
+        <span th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 participants </span>
+        <div th:each="recipe:${recipes}">
+            <div>
+                <img th:src="@{recipe.image}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+                <span th:text="${recipe.chef+'is going to cook'+recipe.title}">Yannick is going to cook Lasagne</span>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <button th:if ="${showJoinEvent}" type="button"><a method="post" th:action="@{event/{eventId}/joinEvent(eventId=${event.id})}">Join event</a></button>
+    <br>
+    <button type="button"><a th:href="@{/home}" href="../home.html">back</a></button>
+    </br>
+
+
+
 
     </body>
