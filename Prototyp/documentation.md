@@ -1,7 +1,9 @@
 # Documentation
 
 ## Todo
-- Create MySettings.html (homepage)
+- Create MySettings.html (homepage).
+- Include commentary section for each page.
+- Include description for recipes.
 
 ## Ideas
 - Recipes can later be added to userprofil.

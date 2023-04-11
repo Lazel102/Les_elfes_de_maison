@@ -1,12 +1,18 @@
 package com.example.prototyp.web;
 
 
+import static com.example.prototyp.config.WebConfig.UPLOAD_DIRECTORY;
+
 import com.example.prototyp.domain.Event;
 import com.example.prototyp.domain.displayDtos.EventDto;
 import com.example.prototyp.domain.displayDtos.RecipeDto;
 import com.example.prototyp.service.EventService;
 import com.example.prototyp.domain.forms.EventForm;
 import com.example.prototyp.domain.forms.RecipeForm;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -25,6 +31,7 @@ public class WebController {
   public WebController(EventService eventService) {
     this.eventService = eventService;
   }
+
 
   @GetMapping("/")
   public String index(){
@@ -51,7 +58,10 @@ public class WebController {
   }
 
   @PostMapping("/createEvent")
-  public String createEvent(@ModelAttribute("eventForm") EventForm eventForm, UsernamePasswordAuthenticationToken token ){
+  public String createEvent(@ModelAttribute("eventForm") EventForm eventForm, UsernamePasswordAuthenticationToken token ) throws
+      IOException {
+    Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, eventForm.kitchenImage().getOriginalFilename());
+    Files.write(fileNameAndPath,eventForm.kitchenImage().getBytes());
     Event createdEvent = Event.of(eventForm ,token.getName());
     Long id = eventService.saveEvent(createdEvent);
     return "redirect:/event/" + id + "/addRecipe";
@@ -63,8 +73,11 @@ public class WebController {
     return "recipePages/addRecipe";
   }
   @PostMapping("/event/{eventId}/addRecipe")
-  public String addRecipe(@PathVariable("eventId") Long eventId, Model m, @ModelAttribute("recipeForm") RecipeForm recipeForm, UsernamePasswordAuthenticationToken token){
+  public String addRecipe(@PathVariable("eventId") Long eventId, Model m, @ModelAttribute("recipeForm") RecipeForm recipeForm, UsernamePasswordAuthenticationToken token)
+      throws IOException {
     Event event = eventService.findEventbyId(eventId);
+    Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, recipeForm.image().getOriginalFilename());
+    Files.write(fileNameAndPath,recipeForm.image().getBytes());
     event.addRecipe(token.getName(), recipeForm);
     return "redirect:/home";
   }
@@ -82,7 +95,7 @@ public class WebController {
   public String joinEvent(@PathVariable("eventId") Long id, UsernamePasswordAuthenticationToken token){
     Event event = eventService.findEventbyId(id);
     event.addParticipant(token.getName());
-    return "event"+id;
+    return "redirect:/event/"+id+"/addRecipe";
   }
 
 }

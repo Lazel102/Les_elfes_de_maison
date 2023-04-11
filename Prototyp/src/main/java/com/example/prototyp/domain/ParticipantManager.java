@@ -1,5 +1,6 @@
 package com.example.prototyp.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -9,7 +10,8 @@ class ParticipantManager {
   int maxNumberOfParticipants;
   ParticipantManager(int numberOfParticipants, String creator){
     this.maxNumberOfParticipants = numberOfParticipants;
-    this.participants= List.of(new Participant(creator));
+    this.participants= new ArrayList<>();
+    this.participants.add(new Participant(creator));
   }
   void addParticipant(String name){
     if (participants.size()+1 <= maxNumberOfParticipants){

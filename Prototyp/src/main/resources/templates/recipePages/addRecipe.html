@@ -28,12 +28,9 @@
 </head>
 <body>
 <h1>Add a Recipe to your List</h1>
-<form th:action="@{/event/{eventId}/addRecipe(eventId=${eventId})}" th:object="${recipeForm}" method="post">
+<form th:action="@{/event/{eventId}/addRecipe(eventId=${eventId})}" th:object="${recipeForm}" method="post" enctype="multipart/form-data">
     <label for="recipeTitleID">Recipe title</label>
     <input type="text" id="recipeTitleID" name="title" th:field="*{title}" placeholder="put in your Title">
-    <br>
-    <label for="descriptionID">Description</label>
-    <input type="text" id="descriptionID" name="description" th:field="*{description}" placeholder="Write a short Description (shorter than 100 characters)">
     <br>
     <label for="ingredientID">Ingredient</label>
     <input type="text" id="ingredientID" placeholder="add an Ingredient">
@@ -48,7 +45,7 @@
     <textarea id="instructionID" name="instruction" th:field="*{instruction}" rows="3">Write Your instructions here</textarea>
     <br>
     <label for="imageUrlID">Upload Image</label>
-    <input type="text" id="imageUrlID" name="imageURL", th:Field="*{imageUrl}">
+    <input type="file" id="imageUrlID" name="imageURL" th:Field="*{image}">
     <br>
     <button type="submit">Add Recipe</button>
     <button type="button" onclick="window.location.href='recipes.html'">Back</button>

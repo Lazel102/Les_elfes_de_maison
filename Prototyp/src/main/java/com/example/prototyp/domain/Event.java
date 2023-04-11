@@ -25,7 +25,7 @@ public class Event {
 
 
   public static Event of(EventForm eventForm, String creator) {
-    return new Event(null, eventForm.kitchenAdress(), eventForm.kitchenImage(), creator, eventForm.date(),
+    return new Event(null, eventForm.kitchenAdress(), eventForm.kitchenImage().getOriginalFilename(), creator, eventForm.date(),
         eventForm.numberOfParticipants(), eventForm.title());
   }
   //todo: Has to be deleted when the program is connected to web

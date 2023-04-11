@@ -19,8 +19,8 @@
         <span th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 participants </span>
         <div th:each="recipe:${recipes}">
             <div>
-                <img th:src="@{recipe.image}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
-                <span th:text="${recipe.chef+'is going to cook'+recipe.title}">Yannick is going to cook Lasagne</span>
+                <img th:src="@{/images/__${recipe.image}__}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+                <span th:text="${recipe.chef+' is going to cook '+recipe.title}">Yannick is going to cook Lasagne</span>
             </div>
 
 
@@ -28,7 +28,11 @@
     </div>
 
 
-    <button th:if ="${showJoinEvent}" type="button"><a method="post" th:action="@{event/{eventId}/joinEvent(eventId=${event.id})}">Join event</a></button>
+    <form th:if ="${showJoinEvent}" method="post" th:action="@{{eventId}/joinEvent(eventId=${event.id})}">
+
+        <button type="submit" >Join event</button>
+    </form>
+
     <br>
     <button type="button"><a th:href="@{/home}" href="../home.html">back</a></button>
     </br>

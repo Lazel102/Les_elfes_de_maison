@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Create Event</h1>
-<form method ="post" th:action="@{createEvent}" th:object ="${eventForm}" >
+<form method ="post" th:action="@{createEvent}" th:object ="${eventForm}" enctype="multipart/form-data">
     <br>
     <label for="titleID"> Choose a Title for your Event</label>
     <input type="text" id="titleID" required th:field="*{title}">
@@ -21,7 +21,7 @@
     <input type="text" id="kitchenAdressID" required  th:field="*{kitchenAdress}">
     <br>
     <label for="kitchenImageID">Picture of your Kitchen</label>
-    <input type="text" id="kitchenImageID" required  th:field="*{kitchenImage}">
+    <input type="file" id="kitchenImageID" required  th:field="*{kitchenImage}">
     <br>
 
 

@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Recipe {
   private final String title;
-  private final String description;
   private final List<String> ingredients;
   private final String instruction;
   private final String imageUrl;
@@ -13,11 +12,10 @@ public class Recipe {
   private final String chef;
   Recipe(RecipeForm recipeForm, String chef) {
     this.chef=chef;
-    this.description = recipeForm.description();
     this.title = recipeForm.title();
     this.ingredients = recipeForm.ingredients();
     this.instruction = recipeForm.instruction();
-    this.imageUrl = recipeForm.imageUrl();
+    this.imageUrl = recipeForm.image().getOriginalFilename();
 
   }
 
@@ -25,9 +23,6 @@ public class Recipe {
     return title;
   }
 
-  public String getDescription() {
-    return description;
-  }
 
   public List<String> getIngredients() {
     return ingredients;

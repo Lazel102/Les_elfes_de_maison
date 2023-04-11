@@ -6,13 +6,7 @@
 </head>
 <body>
     <h1>Join an Event</h1>
-    <form>
-        <label for="dateID"></label>
-        <input type="date" name="date" id="dateID">
-        <label for="placeID"></label>
-        <input type="text" name="place" id="placeID" placeholder="Place">
-        <button type="submit">Filter</button>
-    </form>
+
 <div th:remove="all-but-first">
     <div th:each="event:${events}">
         <h2 th:text="${event.title}"></h2>
