@@ -23,7 +23,9 @@ public class Event {
     this.id =id;
   }
 
-
+  public static Event of(Integer maxNumberOfParticipants, String title){
+    return new Event(null,null, null, "Creator", null, maxNumberOfParticipants, title);
+  };
   public static Event of(EventForm eventForm, String creator) {
     return new Event(null, eventForm.kitchenAdress(), eventForm.kitchenImage().getOriginalFilename(), creator, eventForm.date(),
         eventForm.numberOfParticipants(), eventForm.title());
@@ -65,5 +67,9 @@ public class Event {
   }
   public List<RecipeDto> getRecipes(){
     return recipeManager.getRecipes();
+  }
+
+  public Boolean isFull() {
+    return participantManager.isFull();
   }
 }

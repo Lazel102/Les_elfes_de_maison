@@ -6,6 +6,7 @@ import static com.example.prototyp.config.WebConfig.UPLOAD_DIRECTORY;
 import com.example.prototyp.domain.Event;
 import com.example.prototyp.domain.displayDtos.EventDto;
 import com.example.prototyp.domain.displayDtos.RecipeDto;
+import com.example.prototyp.service.DisplayService;
 import com.example.prototyp.service.EventService;
 import com.example.prototyp.domain.forms.EventForm;
 import com.example.prototyp.domain.forms.RecipeForm;
@@ -87,7 +88,7 @@ public class WebController {
     List<RecipeDto> recipes= event.getRecipes();
     m.addAttribute("recipes", recipes);
     m.addAttribute("event", new EventDto(event));
-    m.addAttribute("showJoinEvent", !event.isParticipant(token.getName()));
+    m.addAttribute("showJoinEvent", DisplayService.showJoinEvent( event,token));
     return "eventPages/event";
   }
 

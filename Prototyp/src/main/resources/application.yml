@@ -1,4 +1,8 @@
 spring:
+  datasource:
+    password: password
+    username: user
+    url: jdbc:postgresql://localhost:5432/elfes
   servlet:
     multipart:
       enabled: true
