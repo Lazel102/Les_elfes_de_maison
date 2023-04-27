@@ -19,19 +19,22 @@ class ParticipantManager {
     }
   }
 
-  public List<String> getParticipants() {
+  List<String> getParticipants() {
     return participants.stream().map(participant -> participant.name()).collect(Collectors.toList());
   }
-  public Integer getNumberOfParticipants(){
+  Integer getNumberOfParticipants(){
     return participants.size();
   }
 
-  public Integer getMaxNumberOfParticipants() {
+  Integer getMaxNumberOfParticipants() {
     return maxNumberOfParticipants;
   }
 
-  public Boolean isParticipant(String name) {
+  Boolean isParticipant(String name) {
     return participants.contains(new Participant(name));
   }
 
+  Boolean isFull() {
+    return maxNumberOfParticipants==getNumberOfParticipants();
+  }
 }
