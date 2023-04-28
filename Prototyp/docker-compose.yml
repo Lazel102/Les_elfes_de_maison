@@ -1,6 +1,6 @@
 version: "3.1"
 services:
-  splitterdb:
+  elfesdb:
     image: postgres:15-alpine
     ports:
       - "5432:5432"

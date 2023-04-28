@@ -1,35 +1,41 @@
 package com.example.prototyp.security;
 
-import com.example.prototyp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class SecurityConfig {
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-  @Bean
-  public SecurityFilterChain configure(HttpSecurity chainBuilder) throws Exception {
-    chainBuilder.authorizeHttpRequests(
-            configurer -> configurer
-                .antMatchers("/", "/register").permitAll()
-                .anyRequest().authenticated()
-        )
-        .formLogin();
-    return chainBuilder.build();
+
+  private UserService userService;
+
+  public SecurityConfig(UserService userService) {
+    this.userService = userService;
+  }
+
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+    http
+        .authorizeRequests()
+        .antMatchers("/", "/register").permitAll()
+        .anyRequest().authenticated()
+        .and()
+        .formLogin()
+        .and()
+        .httpBasic();
   }
 
   @Bean
   public UserDetailsService userDetailsService() {
-    InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-    // Add initial users if necessary
-    return manager;
+    return userService;
   }
 
   @Bean
