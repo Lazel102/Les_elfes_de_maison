@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--External Links-->
     <link rel="stylesheet" href="..\css\style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +14,16 @@
     <title>Homepage</title>
 </head>
 <body>
-<a class="button"> Register </a>
-<a class="button" href="login.html" th:href="@{/home}"> login </a>
+    <div class="container">
+
+        <div class="Logo" style="width:150px;height:150px;border-radius:100px;background-color:white;margin:0 auto 50px;"></div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam scelerisque sit amet dui ac elementum. Morbi tortor nunc, mattis eget bibendum sed.</p>
+    <div class="centerBtns">
+<button id="btnFull" onclick="window.location.href='index.html';" th:href="@{/home}" class="button" > Register </button>
+<button class="button" id="btnEmpty" onclick="window.location.href='login.html';" th:href="@{/home}"> login </bbutton>
+</div>
+</div>
 
 
 </body>
