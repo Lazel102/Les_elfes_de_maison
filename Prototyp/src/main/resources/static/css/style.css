@@ -36,7 +36,7 @@ a{
 }
 
 .centerBtns{
-    display: flex;
+    display: grid;
     justify-content: center;
     margin:0 auto;
 }
@@ -91,9 +91,12 @@ button#btnEmpty:hover{
     }
   }
 
+  form{
+    margin:0 auto;
+  }
+
 input{
     all:unset;
-    max-width: 50%;
 margin:4px 0 10px;
 padding-left: 10px;
     border-radius: 25px;
