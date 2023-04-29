@@ -8,11 +8,25 @@ body{
 }
 
 .container{
-    margin:0 20px;
+    margin:30px 20px;
+}
+
+.logo{
+    display: block;
+    width:150px;
+    height:150px;border-radius:100px;background-color:white;margin:0 auto 50px;
+    background-image: url("tempImages/asset.png");
+    background-size: cover;
+}
+
+h1{
+    font-family:Averia Serif Libre;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 p{
-    font-size: 16px;
     text-align: center;
     padding-bottom: 50px;
 }
@@ -70,3 +84,9 @@ transition:0.2s;
     background-color: #e65444;
     color:#f0f1f5;
 }
+
+@media only screen and (min-width: 768px) {
+    .container {
+      margin:20px 20%;
+    }
+  }
