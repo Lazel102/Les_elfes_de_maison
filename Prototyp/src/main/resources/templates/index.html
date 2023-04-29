@@ -20,8 +20,8 @@
 <h1>Bienvenue chez <br>les Elfes De Maison !</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam scelerisque sit amet dui ac elementum. Morbi tortor nunc, mattis eget bibendum sed.</p>
     <div class="centerBtns">
-<button id="btnFull" onclick="window.location.href='register.html';" th:href="@{/register}" class="button" > Register </button>
-<button class="button" id="btnEmpty" onclick="window.location.href='login.html';" th:href="@{/home}"> login </bbutton>
+<button id="btnFull" onclick="window.location.href='register.html';" th:onclick="|window.location.href='@{/register}'| " class="button" > Register </button>
+<button class="button" id="btnEmpty" onclick="window.location.href='login.html';" th:onclick="|window.location.href='@{/home}'| "> login </button>
 </div>
 </div>
 
