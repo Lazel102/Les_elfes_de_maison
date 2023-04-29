@@ -93,10 +93,10 @@ button#btnEmpty:hover{
 
 input{
     all:unset;
-margin:5px 0;
+    max-width: 50%;
+margin:4px 0 10px;
 padding-left: 10px;
     border-radius: 25px;
     background-color: #FFEAC2;
-    border-bottom:solid 1px #D5B068
 }
 
