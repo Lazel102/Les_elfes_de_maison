@@ -14,7 +14,7 @@
     <title>Registration</title>
 </head>
 <body>
-    <div class="container centerBtns">
+    <div class="container">
 <h1>Register</h1>
 <br>
 <form th:action="@{register}" method="post">
@@ -27,7 +27,7 @@
     <input type="password" id="password" name="password" required>
     <br>
     <br>
-    <button id="btnFull" type="submit">Register</button>
+    <button id="btnFull" type="submit" onclick="window.location.href='home.html';" th:onclick="|window.location.href='@{/home}'| ">Register</button>
 </form>
 </div>
 </body>
