@@ -114,18 +114,18 @@ input{
     all:unset;
 margin:4px 0 10px;
 padding-left: 10px;
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: #FFEAC2;
 }
 
 .eventContainer{
-    width:320px;
+    max-width: 100%;
     height:320px;
     align-items: center;
 margin:0 auto 20px;
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: #FFF6E5;
-    border: solid 2px #927dff;
+    border: solid 1px #927dff;
     -moz-box-shadow:2px 2px 2px rgba(26, 26, 30, 0.2);
     -webkit-box-shadow:2px 2px 2px rgba(26, 26, 30, 0.2);
     box-shadow:2px 2px 2px rgba(26, 26, 30, 0.2);
@@ -147,7 +147,7 @@ margin:0 auto 20px;
     align-items: center;
     width:100%;
     max-height:200px;
-    border-radius: 25px;
+    border-radius: 10px;
     border-bottom: solid 2px #927dff;
 }
 
@@ -163,4 +163,17 @@ ul{
 li{
     all:unset;
     display: flex;
+}
+
+
+@media only screen and (min-width:768px){
+    .eventContainer{
+        width: 320px;
+        margin:10px;
+    }
+    .eventGroupContainer{
+        display:inline-flex;
+    }
+    
+
 }
