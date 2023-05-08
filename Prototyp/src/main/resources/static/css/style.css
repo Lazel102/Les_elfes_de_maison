@@ -77,26 +77,26 @@ button:hover{
     box-shadow:none
 }
 
-button#btnFull{
+button.btnFull{
     transition:0.2s;
     background-color: #927dff;
     color:#f0f1f5;
     border:none;
 }
-button#btnFull:hover{
+button.btnFull:hover{
     transition:0.2s;
     background-color: #e65444;
     color:#f0f1f5;
 }
 
-button#btnEmpty{
+button.btnEmpty{
     transition:0.2s;
     background-color: #f0f1f5;
     color:#927dff;
     border: none;
 }
 
-button#btnEmpty:hover{
+button.btnEmpty:hover{
     transition:0.2s;
     background-color: #e65444;
     color:#f0f1f5;
@@ -145,12 +145,12 @@ margin:0 auto 20px;
     transition:0.1s;
 }
 
-.eventContainer#new{
+.eventContainer.new{
     display: grid;
     text-align: center;
 }
 
-.eventContainer#new p{
+.eventContainer.new p{
 padding: 0;
 }
 
