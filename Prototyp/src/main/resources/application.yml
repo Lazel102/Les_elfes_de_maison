@@ -22,3 +22,8 @@ logging:
           descriptor:
             sql:
               BasicBinder: TRACE
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    mode: HTML
