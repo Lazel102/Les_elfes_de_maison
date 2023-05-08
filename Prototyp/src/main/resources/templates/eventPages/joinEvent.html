@@ -2,48 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--External Links-->
+    <link rel="stylesheet" th:href="@{css\style.css}" href="..\..\static\css\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
     <title>Search Event</title>
 </head>
 <body>
-    <h1>Join an Event</h1>
 
-<div th:remove="all-but-first">
+    <div class="container">
+        <h1>Join an Event</h1>
+        <div class="eventGroupContainer">
+    <div class="eventContainer" type="button" onclick="window.location.href='eventPages/event.html';" th:onclick="|window.location.href='@{event/{eventId}(eventId=${event.id})}'| ">
     <div th:each="event:${events}">
-        <h2 th:text="${event.title}"></h2>
-        <img th:src="@{event.kitchenImage}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
-        <ul>
-            <li th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 participants </li>
-            <li th:text="${event.date}"> 05.03.2023  </li>
-            <li th:text="${event.adress}">8 ème (5 km de chez toi) </li>
-            <button type="button" ><a th:href="@{event/{eventId}(eventId=${event.id})}" href="eventPages/event.html">See more</a></button>
-        </ul>
+       <div class="imgContainer"><img class="kitchenImage" th:src="@{/images/__${event.kitchenImage}__}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"></div> 
+            <ul>
+                <li><h3 th:text="${event.title}">Name: Kitchen title</h3></li>
+                <li th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 participants </li>
+                <li th:text="${event.date}"> 05.03.2023  </li>
+                <li th:text="${event.adress}">8 ème </li>
+            </ul>
+        </div>
     </div>
-    <div>
-        <img src="https://th.bing.com/th/id/OIP.koaqKlpU2IXTZq2NUqZHaAHaFj?w=260&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7">    
-        <ul>
-            <li> 5/6 participants </li>
-            <!--Here we will show the three dates which accumalte the majority of votes-->
-            <li> 05.03.2023  </li>
-            <li> 06.03.2023  </li>
-            <li> 07.03.2023  </li>
-            <li>8 ème (5 km de chez toi) </li>
-            <button type="button" ><a href="event.html">See more</a></button>
-
-        </ul>
-    </div>
-    <div>
-        <img src="https://th.bing.com/th/id/OIP.gGeyC2ksoCOPGlpb4iXenwHaEu?w=329&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">    
-        <ul>
-            <li> 5/6 participants </li>
-            <!--Here we will show the three dates which accumalte the majority of votes-->
-            <li> 05.03.2023  </li>
-            <li> 06.03.2023  </li>
-            <li> 07.03.2023  </li>
-            <li>8 ème (5 km de chez toi) </li>
-            <button type="button" ><a href="event.html">See more</a></button>
-
-        </ul>
-    </div>
+    <div class="eventContainer" type="button" onclick="window.location.href='eventPages/event.html';" th:onclick="|window.location.href='@{event/{eventId}(eventId=${event.id})}'| ">
+        <div th:each="event:${events}">
+           <div class="imgContainer"><img class="kitchenImage" th:src="@{/images/__${event.kitchenImage}__}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"></div> 
+                <ul>
+                    <li><h3 th:text="${event.title}">Name: Kitchen title</h3></li>
+                    <li th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 participants </li>
+                    <li th:text="${event.date}"> 05.03.2023  </li>
+                    <li th:text="${event.adress}">8 ème</li>
+                </ul>
+            </div>
+            </div>
 </div>
 
 </body>
