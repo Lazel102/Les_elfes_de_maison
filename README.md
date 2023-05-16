@@ -12,7 +12,7 @@ People can then request to participate in these events by proposing recipes. The
 
 ## Who We are ? 
 
-Who better to develop such a project than two young individuals living in a city where young people often reside in rooms smaller than Harry's first room at Privet Drive?
+Who better to develop such a project than two young individuals living in a city where students often reside in rooms smaller than Harry's first room at Privet Drive?
 
 We are Yassine and Yannick, a Designer and Data Scientist respectively, residing in two compact yet beautiful rooms in the heart of Paris. Besides our shared passion for innovation and creativity, we both have a deep love for delicious and freshly cooked food.
 ## Technical Details
