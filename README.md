@@ -10,7 +10,7 @@ This web application was born from the idea of uniting young people living in la
 
 People can then request to participate in these events by proposing recipes. The website manages all details concerning the organization of the event and supports its users in creating unique shared cooking experiences.
 
-## Who We are ? 
+## About us 
 
 Who better to develop such a project than two young individuals living in a city where students often reside in rooms smaller than Harry's first room at Privet Drive?
 
