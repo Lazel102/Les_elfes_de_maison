@@ -1,3 +1,15 @@
+.gather{
+    color:#1A1D1E;
+   color: #3C3F42;
+   color: #5B5E63;
+   color:#7B7E84;
+   color: #D0D3D9;
+   color: #DADCE2;
+   color: #E5E7EC;
+   color:  #F0F1F5;
+
+}
+
 body{
     margin: 0;
     font-family: Nunito;
@@ -114,12 +126,30 @@ button.btnEmpty:hover{
     align-items:center ;
   }
 
-input{
+input, textarea{
     all:unset;
-margin:4px 0 10px;
-padding-left: 10px;
+margin:4px 0 15px;
+width:100%;
+line-height:25px;
+padding:0 5px;
     border-radius: 10px;
     background-color: #FFEAC2;
+    border-bottom:solid 1px #927dff;
+}
+
+.inlineBlock{
+    display: inline-flex;
+    width:100%;
+}
+
+label.colHalf{
+    width:50% !important;
+    display: block;
+}
+
+#dateID{
+ width: 90% !important;
+ margin-right: 5%;
 }
 
 .eventContainer{
