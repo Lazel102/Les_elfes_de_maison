@@ -1,5 +1,6 @@
 package com.example.prototyp.domain;
 import com.example.prototyp.domain.helper.EventBuilder;
+import com.example.prototyp.domain.oldEventAgregate.Event;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 

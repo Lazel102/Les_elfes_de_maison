@@ -1,6 +1,6 @@
 package com.example.prototyp.service;
 
-import com.example.prototyp.domain.Event;
+import com.example.prototyp.domain.oldEventAgregate.Event;
 import com.example.prototyp.domain.displayDtos.EventDto;
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,6 +1,6 @@
 package com.example.prototyp.service;
 
-import com.example.prototyp.domain.Event;
+import com.example.prototyp.domain.oldEventAgregate.Event;
 import java.util.HashMap;
 import java.util.List;
 import org.springframework.stereotype.Repository;

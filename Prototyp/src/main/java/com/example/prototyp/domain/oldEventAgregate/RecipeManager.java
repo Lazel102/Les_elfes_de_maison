@@ -1,11 +1,9 @@
-package com.example.prototyp.domain;
+package com.example.prototyp.domain.oldEventAgregate;
 
 import com.example.prototyp.domain.displayDtos.RecipeDto;
 import com.example.prototyp.domain.forms.RecipeForm;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class RecipeManager {

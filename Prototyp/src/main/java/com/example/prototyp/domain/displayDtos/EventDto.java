@@ -1,6 +1,6 @@
 package com.example.prototyp.domain.displayDtos;
 
-import com.example.prototyp.domain.Event;
+import com.example.prototyp.domain.oldEventAgregate.Event;
 
 public record EventDto(String title, Integer numberOfParticipants, Integer maxNumberOfParticipants, String date, String adress, Long id, String kitchenImage) {
   public EventDto(Event event){

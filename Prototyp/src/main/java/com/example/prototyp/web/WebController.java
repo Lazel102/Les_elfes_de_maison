@@ -3,9 +3,10 @@ package com.example.prototyp.web;
 
 import static com.example.prototyp.config.WebConfig.UPLOAD_DIRECTORY;
 
-import com.example.prototyp.domain.Event;
+import com.example.prototyp.domain.oldEventAgregate.Event;
 import com.example.prototyp.domain.displayDtos.EventDto;
 import com.example.prototyp.domain.displayDtos.RecipeDto;
+import com.example.prototyp.security.User;
 import com.example.prototyp.service.DisplayService;
 import com.example.prototyp.service.EventService;
 import com.example.prototyp.domain.forms.EventForm;
@@ -17,6 +18,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.stereotype.Controller;
@@ -39,10 +42,12 @@ public class WebController {
     return "index";
   }
   @GetMapping("/home")
-  public String home(UsernamePasswordAuthenticationToken token, Model m){
-    List<EventDto> userEvents= eventService.getUserEvents(token.getName());
+  public String home(Authentication authentication, Model m){
+    User user = (User) authentication.getPrincipal();
+    Long userId = user.getId();
+    List<EventDto> userEvents= eventService.getUserEvents(userId);
     m.addAttribute("events", userEvents);
-    m.addAttribute( "username",token.getName());
+    m.addAttribute( "username",user.getName());
     return "home";
   }
   @GetMapping("/joinEvent")

@@ -1,4 +1,4 @@
-package com.example.prototyp.domain;
+package com.example.prototyp.domain.newEventAgregate.Event;
 
 class Kitchen {
   private final String adress;

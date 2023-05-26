@@ -1,6 +1,6 @@
 package com.example.prototyp.service;
 
-import com.example.prototyp.domain.Event;
+import com.example.prototyp.domain.oldEventAgregate.Event;
 import java.util.List;
 
 public interface EventRepository {

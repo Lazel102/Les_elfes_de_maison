@@ -1,8 +1,7 @@
 package com.example.prototyp.domain.helper;
 
 
-import com.example.prototyp.domain.Event;
-import com.example.prototyp.domain.forms.EventForm;
+import com.example.prototyp.domain.oldEventAgregate.Event;
 import java.util.List;
 
 public class EventBuilder {

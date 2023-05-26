@@ -1,4 +1,4 @@
-package com.example.prototyp.domain;
+package com.example.prototyp.domain.oldEventAgregate;
 
 import com.example.prototyp.domain.forms.RecipeForm;
 import java.util.List;
