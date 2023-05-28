@@ -3,9 +3,10 @@ package com.example.prototyp.web;
 
 import static com.example.prototyp.config.WebConfig.UPLOAD_DIRECTORY;
 
-import com.example.prototyp.domain.oldEventAgregate.Event;
+
 import com.example.prototyp.domain.displayDtos.EventDto;
 import com.example.prototyp.domain.displayDtos.RecipeDto;
+import com.example.prototyp.domain.newEventAgregate.Event.Event;
 import com.example.prototyp.security.User;
 import com.example.prototyp.service.DisplayService;
 import com.example.prototyp.service.EventService;
