@@ -16,45 +16,55 @@
 <body>
     <div class="navBar">
         <div class="navLinks">
-        <a class="pageLink" href="#"><h1>Home</h1></a>
+        <a class="pageLink" onclick="window.location.href='../home.html';" th:onclick="|window.location.href='@{/home}'| "><h1>Home</h1></a>
         <a class="logoutBtn"  href="index.html" th:action="@{/logout}" method="post">Logout</a>
     </div>
     </div>
     <div class="container">
 
-    <div class="imgContainer">
+    <div class="imgContainer" id="fullHeight">
         <img th:src="@{event.kitchenImage}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
     </div>
     <div>
     <h2 th:text="${event.title}"> Event Example</h2>
-        <span th:text="${event.date}"> 05.03.2023</span>
-        <br>
-        <span th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 participants </span>
+        <h3 th:text="${event.date}"> 05 March 2023</h3>
+        <h3 th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 Participants </h3>
     </div>
     <div class="participantsGroupContainer">
         <div class="participantContainer" th:each="recipe:${recipes}">
-            <div  class="imgContainer">
+            <div  class="imgContainer" onclick="window.location.href='../recipePages/recipe.html';">
                 <img th:src="@{/images/__${recipe.image}__}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
-                <span th:text="${recipe.chef+' is going to cook '+recipe.title}">Yannick is going to cook Lasagne</span>
+            </div>
+            <div class="participantDescription">
+            <h4 th:text="${recipe.chef}">Yannick</h4>
+            <p class="description" th:text="${recipe.title}">Lasagne</p>
+        </div>
+        </div>
+        <div class="participantContainer" th:each="recipe:${recipes}">
+            <div  class="imgContainer" onclick="window.location.href='../recipePages/recipe.html';">
+                <img th:src="@{/images/__${recipe.image}__}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+            </div>
+            <div class="participantDescription">
+                <h4 th:text="${recipe.chef}">Yannick</h4>
+                <p class="description" th:text="${recipe.title}">Lasagne</p>
             </div>
         </div>
         <div class="participantContainer" th:each="recipe:${recipes}">
-            <div  class="imgContainer">
+            <div  class="imgContainer" onclick="window.location.href='../recipePages/recipe.html';">
                 <img th:src="@{/images/__${recipe.image}__}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
-                <span th:text="${recipe.chef+' is going to cook '+recipe.title}">Yannick is going to cook Lasagne</span>
+            </div>
+            <div class="participantDescription">
+                <h4 th:text="${recipe.chef}">Yannick</h4>
+                <p class="description" th:text="${recipe.title}">Lasagne</p>
             </div>
         </div>
-        <br>
-        <div class="participantContainer" th:each="recipe:${recipes}">
-            <div  class="imgContainer">
+        <div class="participantContainer" th:each="recipe:${recipes}" >
+            <div  class="imgContainer" onclick="window.location.href='../recipePages/recipe.html';">
                 <img th:src="@{/images/__${recipe.image}__}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
-                <span th:text="${recipe.chef+' is going to cook '+recipe.title}">Yannick is going to cook Lasagne</span>
             </div>
-        </div>
-        <div class="participantContainer" th:each="recipe:${recipes}">
-            <div  class="imgContainer">
-                <img th:src="@{/images/__${recipe.image}__}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
-                <span th:text="${recipe.chef+' is going to cook '+recipe.title}">Yannick is going to cook Lasagne</span>
+            <div class="participantDescription">
+                <h4 th:text="${recipe.chef}">Yannick</h4>
+                <p class="description" th:text="${recipe.title}">Lasagne</p>
             </div>
         </div>
     </div>
@@ -62,12 +72,8 @@
 
     <form th:if ="${showJoinEvent}" method="post" th:action="@{{eventId}/joinEvent(eventId=${event.id})}">
 
-        <button class="btnEmpty" type="submit" >Join event</button>
+        <button class="btnFull" type="submit" >Join event</button>
     </form>
-
-    <br>
-    <button class="btnFull" type="button"><a th:href="@{/home}" href="../home.html">back</a></button>
-    </br>
 
 </div>
 
