@@ -13,6 +13,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  image:
+    storage:
+      directory: images
 logging:
   level:
     org:
