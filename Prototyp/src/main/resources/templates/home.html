@@ -16,16 +16,13 @@
 
 
 <body>
+    <div class="navBar">
+        <div class="navLinks">
+        <a class="pageLink" href="#"><h1>Home</h1></a>
+        <a class="logoutBtn"  href="index.html" th:action="@{/logout}" method="post">Logout</a>
+    </div>
+    </div>
     <div class="container">
-<span class="alignRight"> <h1>Home</h1>
-    <form  th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form></span>
-       
-<!--<div class="centerBtns">
-       <button id="btnFull" onclick="window.location.href='eventPages/joinEvent.html';" th:onclick="|window.location.href='@{joinEvent}'| ">Join an event</button>
-       <button id="btnEmpty" onclick="window.location.href='eventPages/createEvent.html';" th:onclick="|window.location.href='@{ceateEvent}'| ">Create new event</button>
-</div>-->
 
     <h2>My Events</h2>
 
@@ -43,13 +40,16 @@
         </div>
 
 </div>
-<div class="eventContainer new" onclick="window.location.href='eventPages/joinEvent.html';" th:onclick="|window.location.href='@{joinEvent}'| ">
-<p>Join an event</p>
+<div class="newEventGroupContainer">
+  <div class="eventContainer new" onclick="window.location.href='eventPages/joinEvent.html';" th:onclick="|window.location.href='@{joinEvent}'| ">
+  <p>Join an event</p>
+  </div>
+  <div class="eventContainer new" onclick="window.location.href='eventPages/createEvent.html';" th:onclick="|window.location.href='@{createEvent}'| ">
+      <p>Create a new event</p>
+      </div>
+  </div>
 </div>
-<div class="eventContainer new" onclick="window.location.href='eventPages/createEvent.html';" th:onclick="|window.location.href='@{createEvent}'| ">
-    <p>Create a new event</p>
-    </div>
-</div>
+
 </div>
 </body>
 </html>

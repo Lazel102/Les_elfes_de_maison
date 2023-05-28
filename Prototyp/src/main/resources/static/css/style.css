@@ -15,12 +15,12 @@ body{
     font-family: Nunito;
     font-size: 16px;
     font-weight:400;
-    color:#1a1d1e;
+    color:#5B5E63;
     background-color: #FFD37D;
 }
 
 .container{
-    margin:30px 20px;
+    margin:100px 20px;
 }
 
 .logo{
@@ -36,20 +36,24 @@ h1{
     font-size: 20px;
     text-align: center;
     text-transform: uppercase;
+    font-weight: 100;
+    color:#3C3F42;
 }
 
 h2{
     font-family:Averia Serif Libre;
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
-    text-transform: uppercase;
+    color:#1A1D1E;
 }
 
 h3{
     all:unset;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
+    color:#1A1D1E;
 }
+
 
 p{
     text-align: center;
@@ -58,22 +62,53 @@ p{
 
 a{
     all:unset;
-}
-
-span.alignRight{
-    display: block;
+    cursor: pointer;
 }
 
 .centerBtns{
-    display: flex;
+    display: grid;
     justify-content: center;
     margin:0 auto;
 }
 
+
+
+.navBar{
+    position:fixed;
+    top: 0;
+   width: 100%;
+    background-color: #927dff;
+}
+
+.navLinks{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+.navLinks a, .navLinks h1{
+    display:inline-block;
+    text-align: center;
+    cursor: pointer;
+    color:#E5E7EC;
+}
+
+.navLinks a:hover, .navLinks h1:hover{
+color:#f0f1f5;
+}
+
+a.logoutBtn{
+    margin-left:auto;
+}
+
 button{
+    display: inline-block;
     border-radius:25px;
     padding: 10px 25px;
     margin: 5px 5px;
+    cursor: pointer;
     min-width: 170px;
     text-align: center;
     -moz-box-shadow:2px 2px 2px rgba(26, 26, 30, 0.2);
@@ -115,8 +150,13 @@ button.btnEmpty:hover{
 }
 
 @media only screen and (min-width: 768px) {
+.navLinks{
+    width:660px;
+}
+
     .container {
-      margin:20px 20%;
+      margin:100px auto;
+      width: 660px;
     }
   }
 
@@ -126,12 +166,12 @@ button.btnEmpty:hover{
     align-items:center ;
   }
 
-input, textarea{
+input:not(#kitchenImageID), textarea{
     all:unset;
 margin:4px 0 15px;
 width:100%;
 line-height:25px;
-padding:0 5px;
+padding:0 7px;
     border-radius: 10px;
     background-color: #FFEAC2;
     border-bottom:solid 1px #927dff;
@@ -157,6 +197,7 @@ label.colHalf{
     height:320px;
     align-items: center;
 margin:0 auto 20px;
+cursor: pointer;
     border-radius: 10px;
     background-color: #FFF6E5;
     border: solid 1px #927dff;
@@ -175,9 +216,19 @@ margin:0 auto 20px;
     transition:0.1s;
 }
 
+.newEventGroupContainer{
+    display:block;
+}
+
 .eventContainer.new{
     display: grid;
     text-align: center;
+    height:150px;
+    margin:10px 0px;
+}
+
+.eventContainer.new+.eventContainer.new{
+    margin-top:20px;
 }
 
 .eventContainer.new p{
@@ -193,6 +244,21 @@ padding: 0;
     border-radius: 10px;
     border-bottom: solid 2px #927dff;
 }
+
+.participantsGroupContainer{
+    display: flex;
+    width:100%
+}
+
+.participantContainer{
+    width:50%;
+}
+
+
+.participantContainer + .participantContainer{
+margin-left:10px;
+}
+
 
 .kitchenImage{
 width:100%;
@@ -212,13 +278,13 @@ li{
 @media only screen and (min-width:768px){
     .eventContainer{
         width: 320px;
-        margin:10px;
+        margin:10px 20px 10px 0px;
     }
     .eventGroupContainer{
         display:inline-flex;
     }
     .centerBtns{
-        display: block;
+        display: flex;
     }
 
 }

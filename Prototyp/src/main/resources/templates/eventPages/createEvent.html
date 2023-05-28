@@ -36,10 +36,9 @@
     <br>
     <textarea type="text" id="kitchenDescription" required  th:field="*{kitchenAdress}"></textarea>
     <br>
-    <label for="kitchenImageID">Picture of your Kitchen</label>
-    <br>
-    <input class="btnEmpty" type="file" id="kitchenImageID" required  th:field="*{kitchenImage}">
-    <br>
+    <label for="kitchenImageID" class="btnEmpty">Upload kitchen  image</label>
+    <input type="file" id="kitchenImageID" required  th:field="*{kitchenImage}">
+   <br>
     <button class="btnFull" type="submit">Create Event </button>
 </form>
 
