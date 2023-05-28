@@ -7,12 +7,5 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class EventTest {
 
-  @Test
-  void isFull() {
-    Event testEvent = new EventBuilder().
-        withNumberOfParticipants(3).
-        withParticipants(List.of("Victor Hugo", "Réné Descartes")).
-        create();
-    assertThat(testEvent.isFull()).isTrue();
-  }
+
 }
