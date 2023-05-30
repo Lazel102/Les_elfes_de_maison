@@ -80,6 +80,7 @@ a{
 
 ul.indent{
     padding:0 20px;
+    margin: 10px 0 10px;
  }
  
  li{
@@ -184,7 +185,6 @@ button.btnEmpty:hover{
 
   form{
     display: table;
-    margin:0 auto;
     align-items:center ;
   }
 
@@ -192,7 +192,7 @@ input:not(#kitchenImageID), textarea{
     all:unset;
 margin:4px 0 15px;
 padding-left:7px;
-width:calc(100%-7px);
+width:calc(100% - 7px);
     border-radius: 10px;
     background-color: #FFEAC2;
     border-bottom:solid 1px #927dff;
