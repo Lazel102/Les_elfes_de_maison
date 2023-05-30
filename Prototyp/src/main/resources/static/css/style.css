@@ -7,7 +7,6 @@
    color: #DADCE2;
    color: #E5E7EC;
    color:  #F0F1F5;
-
 }
 
 body{
@@ -192,7 +191,8 @@ button.btnEmpty:hover{
 input:not(#kitchenImageID), textarea{
     all:unset;
 margin:4px 0 15px;
-width:100%;
+padding-left:7px;
+width:calc(100%-7px);
     border-radius: 10px;
     background-color: #FFEAC2;
     border-bottom:solid 1px #927dff;
@@ -212,7 +212,6 @@ width:100%;
 
 .eventContainer{
     max-width: 100%;
-    height:320px;
     align-items: center;
 margin:0 auto 20px;
 cursor: pointer;
@@ -267,7 +266,7 @@ padding: 0;
 .participantsGroupContainer{
     display: flex;
     flex-wrap: wrap;
-    column-gap:10px;
+    column-gap:15px;
     row-gap:15px;
     margin-top:20px;
     margin-bottom:50px;
