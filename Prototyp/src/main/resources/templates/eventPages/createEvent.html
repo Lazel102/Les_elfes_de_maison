@@ -14,17 +14,25 @@
     <title>Create Event</title>
 </head>
 <body>
-<h1>Create Event</h1>
+    <nav class="navBar">
+        <div class="navLinks">
+        <a class="pageLink" onclick="window.location.href='../home.html';" th:onclick="|window.location.href='@{/home}'| "><h1>Home</h1></a>
+        <a class="logoutBtn"  onclick="window.location.href='../index.html';" th:action="@{/logout}" method="post">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Create Event</h2>
 <form method ="post" th:action="@{createEvent}" th:object ="${eventForm}" enctype="multipart/form-data">
     <br>
     <label for="titleID"> Choose a Title for your Event</label>
     <br>
     <input type="text" id="titleID" required th:field="*{title}">
     <br>
-    <span class="inlineBlock"><label class="colHalf" for="dateID"> Choose a date</label><label class="colHalf" for="numberParticipantsID">Participants</label>
+    <span class="inlineFlex"><label class="colHalf" for="dateID"> Choose a date</label><label class="colHalf" for="numberParticipantsID">Participants</label>
  </span>
  <br>
-    <span class="inlineBlock"><input class="colHalf" type="date" id="dateID" required th:field="*{date}">
+    <span class="inlineFlex"><input class="colHalf" type="date" id="dateID" required th:field="*{date}">
         <input class="colHalf" type="number" id="numberParticipantsID" required  th:field="*{numberOfParticipants}"></span>
     <br>
     <label for="kitchenAdressID">Adress of your Kitchen</label>
@@ -41,6 +49,6 @@
    <br>
     <button class="btnFull" type="submit">Create Event </button>
 </form>
-
+</div>
 </body>
 </html>
