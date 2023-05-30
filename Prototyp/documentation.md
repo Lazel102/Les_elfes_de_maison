@@ -6,6 +6,7 @@
 - Include description for recipes.
 
 ## Important integration Questions
+- Regarding Backend's developement: What was the reason why we can't use "href=" to link a <button> or <a> for compatibility with thymeLeaf?
 - What is the purpose of "th:remove="all-but-first" in joinEvent.html ?
 - How to generate a new class='eventContainer' in joinevent.html very time a user creates one ?
 
@@ -13,8 +14,11 @@
 - In the ressources folder in future updates is a folder with possible future templates.
 
 ## Design
--Differenciate Fresh Events from Registered Events.
--Rethink colors (add saturation, gradients/sketchy edges...)
+- Check consistency on different pages.
+- Set proper gaps, margins and spacings.
+- Differenciate Fresh Events from Registered Events.
+- Rethink colors (add saturation, gradients/sketchy edges...)
+- Find new open font
  
 ## Expantion Ideas
 - Recipes can later be added to userprofil.
