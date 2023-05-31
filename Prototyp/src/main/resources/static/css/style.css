@@ -172,6 +172,22 @@ button.btnEmpty:hover{
     color:#f0f1f5;
 }
 
+
+button.btnTiny{
+    all:unset;
+    padding: 2px 5px;
+    height:20px;
+    border: 1px solid #D0D3D9;
+    border-radius: 5px;
+    background-color:#927dff;
+    color:#D0D3D9;
+}
+
+button.btnTiny:hover{
+    background-color:#A69AE3;
+    color:#3C3F42;
+}
+
 @media only screen and (min-width: 768px) {
 .navLinks{
     width:660px;
@@ -188,7 +204,7 @@ button.btnEmpty:hover{
     align-items:center ;
   }
 
-input:not(#kitchenImageID), textarea{
+input:not(#kitchenImageID,input.inputInner),.inputContainer, textarea{
     all:unset;
 margin:4px 0 15px;
 padding-left:7px;
@@ -196,6 +212,18 @@ width:calc(100% - 7px);
     border-radius: 10px;
     background-color: #FFEAC2;
     border-bottom:solid 1px #927dff;
+}
+
+input.inputInner{
+    all:unset;  
+    margin:4px 0;
+    padding-left:7px;
+    width:calc(100% - 60px);
+    border-bottom:solid 1px #927dff;
+}
+
+.inputContainer{
+    display:inline-block;
 }
 
 .inlineFlex{
