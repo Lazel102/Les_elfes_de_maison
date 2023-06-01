@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
     <title>Add Recipe</title>
-    <script>
+  <script>
+
         function addIngredient() {
             const ingredientInput = document.getElementById('ingredientID');
             const ingredient = ingredientInput.value.trim();
@@ -29,27 +30,34 @@
                 ingredientInput.value = '';
             }
         }
-
+            function handleKeyPress(event) {
+        if (event.keyCode === 13) { // 13 is the key code for Enter
+            event.preventDefault(); // Prevent form submission on Enter key press
+            addIngredient(); // Trigger the addIngredient function
+        }
+    }
     </script>
+
 </head>
 <body>
     <nav class="navBar">
         <div class="navLinks">
-        <a class="pageLink" onclick="window.location.href='#';" th:onclick="|window.location.href='@{/home}'| "><h1>Home</h1></a>
+        <a class="pageLink" onclick="window.location.href='../home.html';" th:onclick="|window.location.href='@{/home}'| "><h1>Home</h1></a>
         <a class="logoutBtn"  onclick="window.location.href='index.html';" th:action="@{/logout}" method="post">Logout</a>
     </div>
 </nav>
 <div class="container">
-<h2>Add a Recipe to your List</h2>
+<h2>Add new recipe</h2>
 <form th:action="@{/event/{eventId}/addRecipe(eventId=${eventId})}" th:object="${recipeForm}" method="post" enctype="multipart/form-data">
     <label for="recipeTitleID">Recipe title</label>
-    <input type="text" id="recipeTitleID" name="title" th:field="*{title}" placeholder="put in your Title">
+    <input type="text" id="recipeTitleID" name="title" th:field="*{title}" required>
     <br>
     <label for="ingredientID">Ingredient</label>
     <div class="inputContainer">
-    <input class="inputInner" type="text" id="ingredientID" placeholder="Type each ingredient individually...">
+        <span class="addIngredient">
+    <input class="inputInner" type="text" id="ingredientID" placeholder="Type each ingredient individually..." onkeypress="handleKeyPress(event)">
     <button class="btnTiny" type="button" onclick="addIngredient()">Add</button>
-
+</span>
     <ul id="ingredientsList">
         <li th:each="ingredient : ${recipeForm.ingredients}" th:text="${ingredient}"></li>
     </ul>
@@ -57,10 +65,12 @@
 
     <label for="instructionID">Instructions</label>
     <br>
-    <textarea id="instructionID" name="instruction" th:field="*{instruction}" rows="3">Write Your instructions here</textarea>
+    <textarea id="instructionID" name="instruction" th:field="*{instruction}" rows="3"></textarea>
     <br>
-    <label for="imageUrlID">Upload Image</label>
-    <input type="file" id="imageUrlID" name="imageURL" th:Field="*{image}">
+    <label for="imageUrlID">Upload recipe image</label>
+   <!-- <input type="file" id="imageUrlID" name="imageURL" th:Field="*{image}" required>-->
+   <br>
+    <button type="button" id="imageUrlID" class="btnEmpty" th:Field="*{image}" onclick="document.getElementById('imageUrlID').click()" required>Choose File</button>
     <br>
     <button class="btnFull"type="submit">Add Recipe</button>
 </form>

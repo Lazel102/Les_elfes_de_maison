@@ -61,11 +61,12 @@ h4{
 }
 
 
-.description{
+.description, input::placeholder{
     margin:0;
     padding:0;
     font-style: italic;
     font-weight: 300;
+    color:#7B7E84;
 }
 
 p.centerText{
@@ -126,7 +127,7 @@ a.logoutBtn{
     margin-left:auto;
 }
 
-button{
+button,label.btnFull{
     display: inline-block;
     border-radius:25px;
     padding: 10px 25px;
@@ -147,7 +148,7 @@ button:hover{
     box-shadow:none
 }
 
-button.btnFull{
+button.btnFull, label.btnFull{
     transition:0.2s;
     background-color: #927dff;
     color:#f0f1f5;
@@ -177,15 +178,18 @@ button.btnTiny{
     all:unset;
     padding: 2px 5px;
     height:20px;
-    border: 1px solid #D0D3D9;
-    border-radius: 5px;
-    background-color:#927dff;
-    color:#D0D3D9;
+    border-left: 1px solid #7B7E84;
+    color:#7B7E84;
 }
 
 button.btnTiny:hover{
     background-color:#A69AE3;
     color:#3C3F42;
+}
+
+
+.btnFileUpload input[type="file"] {
+    display: none !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -204,14 +208,24 @@ button.btnTiny:hover{
     align-items:center ;
   }
 
-input:not(#kitchenImageID,input.inputInner),.inputContainer, textarea{
+  label{
+    padding-left:5px
+  }
+
+input:not(#kitchenImageID,input.inputInner), .inputContainer,textarea{
     all:unset;
 margin:4px 0 15px;
 padding-left:7px;
+height:36px;
 width:calc(100% - 7px);
-    border-radius: 10px;
+align-items:center;
+    border-radius: 25px;
     background-color: #FFEAC2;
     border-bottom:solid 1px #927dff;
+}
+
+.inputContainer, textarea{
+    height:auto;
 }
 
 input.inputInner{
@@ -219,8 +233,9 @@ input.inputInner{
     margin:4px 0;
     padding-left:7px;
     width:calc(100% - 60px);
-    border-bottom:solid 1px #927dff;
 }
+
+
 
 .inputContainer{
     display:inline-block;
@@ -229,7 +244,6 @@ input.inputInner{
 .inlineFlex{
     display: inline-flex;
     width:100%;
-    align-items: baseline;
     column-gap:10px;
 }
 
@@ -237,6 +251,9 @@ input.inputInner{
     width:50%;
 }
 
+.addIngredient{
+    border-bottom:solid 1px #927dff;
+}
 
 .eventContainer{
     max-width: 100%;
