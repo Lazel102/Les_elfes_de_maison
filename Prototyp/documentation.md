@@ -1,11 +1,14 @@
 # Documentation
 
 ## Todo
+- Push gradle.bat
 - Create MySettings.html (homepage).
 - Include commentary section for each page.
 - Include description for recipes.
 
 ## Important integration Questions
+- Update the multiple recipe image containers in event.html
+- NEED TO CHECK THE PROPER IMPLEMENTATION  of image upload after last Yassine's push on addRecipe.html and createEvent.html.
 - Regarding Backend's developement: What was the reason why we can't use "href=" to link a <button> or <a> for compatibility with thymeLeaf?
 - What is the purpose of "th:remove="all-but-first" in joinEvent.html ?
 - How to generate a new class='eventContainer' in joinevent.html very time a user creates one ?
