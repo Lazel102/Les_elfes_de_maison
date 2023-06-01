@@ -44,8 +44,10 @@
     <br>
     <textarea type="text" id="kitchenDescription" required  th:field="*{kitchenAdress}"></textarea>
     <br>
-    <label for="kitchenImageID" class="btnEmpty">Upload kitchen  image</label>
-    <input type="file" id="kitchenImageID" required  th:field="*{kitchenImage}">
+    <label for="kitchenImageID" class="btnEmpty">Upload kitchen image</label>
+    <!--<input type="file" id="kitchenImageID" required  th:field="*{kitchenImage}">-->
+    <br>
+    <button type="button" id="kitchenImageID" class="btnEmpty" th:Field="*{kitchenImage}" onclick="document.getElementById('kitchenImageID').click()" required>Choose File</button>
    <br>
     <button class="btnFull" type="submit">Create Event </button>
 </form>
