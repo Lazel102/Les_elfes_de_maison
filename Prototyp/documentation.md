@@ -1,13 +1,16 @@
 # Documentation
 
 ## Todo
-- Push gradle.bat
+- Implement a notification on "home.html" : "You haven't registered in any event yet, join a create a new event below".
+- Implement a link toward a Registered event without the "Join Event" button in event.html (Fresh Event # Registered event).
+- Push gradle.bat.
 - Create MySettings.html (homepage).
 - Include commentary section for each page.
 - Include description for recipes.
 
-## Important integration Questions
-- Update the multiple recipe image containers in event.html
+## Urgent BUG FIXES
+- Input types number can still be filled with "e" letters.
+- Update the multiple recipe image containers in event.html.
 - NEED TO CHECK THE PROPER IMPLEMENTATION  of image upload after last Yassine's push on addRecipe.html and createEvent.html.
 - Regarding Backend's developement: What was the reason why we can't use "href=" to link a <button> or <a> for compatibility with thymeLeaf?
 - What is the purpose of "th:remove="all-but-first" in joinEvent.html ?
@@ -21,7 +24,7 @@
 - Set proper gaps, margins and spacings.
 - Differenciate Fresh Events from Registered Events.
 - Rethink colors (add saturation, gradients/sketchy edges...)
-- Find new open font
+- Find new open font.
  
 ## Expantion Ideas
 - Recipes can later be added to userprofil.

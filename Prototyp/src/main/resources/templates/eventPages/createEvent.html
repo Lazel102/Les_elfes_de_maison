@@ -25,29 +25,29 @@
     <h2>Create Event</h2>
 <form method ="post" th:action="@{createEvent}" th:object ="${eventForm}" enctype="multipart/form-data">
     <br>
-    <label for="titleID"> Choose a Title for your Event</label>
+    <label for="titleID"> Choose a title for your event</label>
     <br>
     <input type="text" id="titleID" required th:field="*{title}">
     <br>
     <span class="inlineFlex"><label class="colHalf" for="dateID"> Choose a date</label><label class="colHalf" for="numberParticipantsID">Participants</label>
  </span>
  <br>
-    <span class="inlineFlex"><input class="colHalf" type="date" id="dateID" required th:field="*{date}">
+    <span class="inlineFlex">
+        <input class="colHalf" type="date" id="dateID" required th:field="*{date}">
         <input class="colHalf" type="number" id="numberParticipantsID" required  th:field="*{numberOfParticipants}"></span>
     <br>
-    <label for="kitchenAdressID">Adress of your Kitchen</label>
+    <label for="kitchenAdressID">In which district is your kitchen located ?</label>
     <br>
-    <input type="text" id="kitchenAdressID" rows="4" required  th:field="*{kitchenAdress}">
-    <br>
-   
+    <span class="inlineFlex">
+    <input class="colHalf" type="number" id="kitchenAdressID" required  th:field="*{kitchenAdress}">
+    <button type="button" id="kitchenImageID" class="btnEmpty colHalf" th:Field="*{kitchenImage}" onclick="document.getElementById('kitchenImageID').click()" required>Choose image</button>
+    </span>
+   <br>
     <label for="kitchenDescription">Describe your event</label>
     <br>
-    <textarea type="text" id="kitchenDescription" required  th:field="*{kitchenAdress}"></textarea>
-    <br>
-    <label for="kitchenImageID" class="btnEmpty">Upload kitchen image</label>
+    <textarea type="text" rows="4" id="kitchenDescription" required  th:field="*{kitchenAdress}"></textarea>
+
     <!--<input type="file" id="kitchenImageID" required  th:field="*{kitchenImage}">-->
-    <br>
-    <button type="button" id="kitchenImageID" class="btnEmpty" th:Field="*{kitchenImage}" onclick="document.getElementById('kitchenImageID').click()" required>Choose File</button>
    <br>
     <button class="btnFull" type="submit">Create Event </button>
 </form>
