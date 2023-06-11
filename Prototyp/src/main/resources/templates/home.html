@@ -24,38 +24,30 @@
     <h2>My Events</h2>
 
     <div class="eventGroupContainer">
-        <div th:each="event:${events}">
-    <div class="eventContainer" onclick="window.location.href='eventPages/event.html';" th:onclick="|window.location.href='@{event/{eventId}(eventId=${event.id})}'| ">
-       <div class="imgContainer"><img class="kitchenImage" th:src="@{/images/__${event.kitchenImage}__}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="A picture of fellow elf's kitchen"></div> 
-            <ul class="indent">
-                <li><h3 th:text="${event.title}">Name: Kitchen title</h3></li>
-                <li th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 participants </li>
-                <li th:text="${event.date}"> 05.03.2023  </li>
-                <li th:text="${event.adress}">8 ème </li>
-            </ul>
+        <div th:if ="" th:action="">
+            <h3>You haven't registered in any event yet, you can join or create a new event below.</h3>
         </div>
-</div>
 <div th:each="event:${events}">
     <div class="eventContainer" onclick="window.location.href='eventPages/event.html';" th:onclick="|window.location.href='@{event/{eventId}(eventId=${event.id})}'| ">
        <div class="imgContainer"><img class="kitchenImage" th:src="@{/images/__${event.kitchenImage}__}" src="https://th.bing.com/th/id/OIP.2VuON7jUjFuVi5XHJLMS5QHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="A picture of fellow elf's kitchen"></div> 
             <ul class="indent">
-                <li><h3 th:text="${event.title}">Name: Kitchen title</h3></li>
+                <li><h3 th:text="${event.title}">Sparkles of middle east</h3></li>
                 <li th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 participants </li>
                 <li th:text="${event.date}"> 05.03.2023  </li>
                 <li th:text="${event.adress}">8 ème </li>
             </ul>
         </div>
 </div>
-<div class="newEventGroupContainer">
-  <div class="eventContainer new" onclick="window.location.href='eventPages/joinEvent.html';" th:onclick="|window.location.href='@{joinEvent}'| ">
-  <p class="centerText">Join an event</p>
-  </div>
-  <div class="eventContainer new" onclick="window.location.href='eventPages/createEvent.html';" th:onclick="|window.location.href='@{createEvent}'| ">
-      <p class="centerText">Create a new event</p>
-      </div>
-  </div>
-</div>
 
+</div>
+<div class="newEventGroupContainer">
+    <div class="eventContainer new" onclick="window.location.href='eventPages/joinEvent.html';" th:onclick="|window.location.href='@{joinEvent}'| ">
+    <p class="centerText">Join an event</p>
+    </div>
+    <div class="eventContainer new" onclick="window.location.href='eventPages/createEvent.html';" th:onclick="|window.location.href='@{createEvent}'| ">
+        <p class="centerText">Create a new event</p>
+        </div>
+    </div>
 </div>
 </body>
 </html>
