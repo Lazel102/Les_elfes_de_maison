@@ -23,26 +23,21 @@
 <div class="container">
 
 <div class="imgContainer fullHeight"><img src="https://downshiftology.com/wp-content/uploads/2018/12/Shakshuka-19-500x500.jpg" alt="A picture of a recipe taken by a fellow user"></div>
-
 <h2 th:text="${recipe.title}"> Shakshuka</h2>
-
-
+<section>
 <h3>Description</h3>
 <p class="description"> A medidaterianian Dish based on tomatos and feta (max: 100 characters)</p>
-<br>
 <h3>Ingredients</h3>
 <ul class="description">
   <li>Tomatoes</li>
   <li>Garlic</li>
   <li>Onions</li>
 </ul>
-<br>
 
 <h3>Instructions (Optional)</h3>
 <p class="description"> A medidaterianian Dish based on tomatos and feta (max: 100 characters)</p>
-
-<br>
-<button class="btnFull" type="button" ><a onclick="window.location.href='../eventPages/event.html';" th:onclick="|window.location.href='@{/event}'| ">Back to kitchen</a></button>
+</section>
+<button class="btnFull" type="button"  onclick="window.location.href='../eventPages/event.html';" th:onclick="|window.location.href='@{/event}'| ">Back to kitchen</button>
 </div>
 </body>
 </html>
