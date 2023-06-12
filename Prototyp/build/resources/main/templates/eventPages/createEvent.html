@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--External Links-->
+    <link rel="stylesheet" th:href="@{css\style.css}" href="..\..\static\css\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap">
+    <title>Create Event</title>
+</head>
+<body>
+    <nav class="navBar">
+        <div class="navLinks">
+        <a class="pageLink" onclick="window.location.href='../home.html';" th:onclick="|window.location.href='@{/home}'| "><h1>Home</h1></a>
+        <a class="logoutBtn"  onclick="window.location.href='../index.html';" th:action="@{/logout}" method="post">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Create Event</h2>
+<form method ="post" th:action="@{createEvent}" th:object ="${eventForm}" enctype="multipart/form-data">
+    <br>
+    <label for="titleID"> Choose a Title for your Event</label>
+    <br>
+    <input type="text" id="titleID" required th:field="*{title}">
+    <br>
+    <span class="inlineFlex"><label class="colHalf" for="dateID"> Choose a date</label><label class="colHalf" for="numberParticipantsID">Participants</label>
+ </span>
+ <br>
+    <span class="inlineFlex"><input class="colHalf" type="date" id="dateID" required th:field="*{date}">
+        <input class="colHalf" type="number" id="numberParticipantsID" required  th:field="*{numberOfParticipants}"></span>
+    <br>
+    <label for="kitchenAdressID">Adress of your Kitchen</label>
+    <br>
+    <input type="text" id="kitchenAdressID" rows="4" required  th:field="*{kitchenAdress}">
+    <br>
+   
+    <label for="kitchenDescription">Describe your event</label>
+    <br>
+    <textarea type="text" id="kitchenDescription" required  th:field="*{kitchenAdress}"></textarea>
+    <br>
+    <label for="kitchenImageID" class="btnEmpty">Upload kitchen  image</label>
+    <input type="file" id="kitchenImageID" required  th:field="*{kitchenImage}">
+   <br>
+    <button class="btnFull" type="submit">Create Event </button>
+</form>
+</div>
+</body>
+</html>

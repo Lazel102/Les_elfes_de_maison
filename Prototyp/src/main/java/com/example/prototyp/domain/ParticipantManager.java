@@ -13,6 +13,13 @@ class ParticipantManager {
     this.participants= new ArrayList<>();
     this.participants.add(new Participant(creator));
   }
+
+  public ParticipantManager(int numberOfParticipants) {
+    this.maxNumberOfParticipants = numberOfParticipants;
+    this.participants= new ArrayList<>();
+
+  }
+
   void addParticipant(String name){
     if (participants.size()+1 <= maxNumberOfParticipants){
       participants.add(new Participant(name));

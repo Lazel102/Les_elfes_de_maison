@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Recipe</title>
+    <script>
+        function addIngredient() {
+            const ingredientInput = document.getElementById('ingredientID');
+            const ingredient = ingredientInput.value.trim();
+            if (ingredient !== '') {
+                const ul = document.getElementById('ingredientsList');
+                const li = document.createElement('li');
+                li.appendChild(document.createTextNode(ingredient));
+                ul.appendChild(li);
+
+                // Create hidden input for the ingredient
+                const hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = 'ingredients';
+                hiddenInput.value = ingredient;
+                document.querySelector('form').appendChild(hiddenInput);
+
+                ingredientInput.value = '';
+            }
+        }
+
+    </script>
+</head>
+<body>
+<h1>Add a Recipe to your List</h1>
+<form th:action="@{/event/{eventId}/addRecipe(eventId=${eventId})}" th:object="${recipeForm}" method="post" enctype="multipart/form-data">
+    <label for="recipeTitleID">Recipe title</label>
+    <input type="text" id="recipeTitleID" name="title" th:field="*{title}" placeholder="put in your Title">
+    <br>
+    <label for="ingredientID">Ingredient</label>
+    <input type="text" id="ingredientID" placeholder="add an Ingredient">
+    <button type="button" onclick="addIngredient()">Add Ingredient</button>
+
+    <ul id="ingredientsList">
+        <li th:each="ingredient : ${recipeForm.ingredients}" th:text="${ingredient}"></li>
+    </ul>
+
+    <label for="instructionID">Instructions</label>
+    <br>
+    <textarea id="instructionID" name="instruction" th:field="*{instruction}" rows="3">Write Your instructions here</textarea>
+    <br>
+    <label for="imageUrlID">Upload Image</label>
+    <input type="file" id="imageUrlID" name="imageURL" th:Field="*{image}">
+    <br>
+    <button type="submit">Add Recipe</button>
+    <button type="button" onclick="window.location.href='recipes.html'">Back</button>
+</form>
+</body>
+</html>

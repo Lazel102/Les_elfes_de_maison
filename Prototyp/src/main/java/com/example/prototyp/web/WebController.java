@@ -85,7 +85,7 @@ public class WebController {
   @GetMapping("event/{eventId}")
   public String event( @PathVariable Long eventId, Model m, UsernamePasswordAuthenticationToken token){
     Event event = eventService.findEventbyId(eventId);
-    List<RecipeDto> recipes= event.getRecipes();
+    List<RecipeDto> recipes= event.getRecipeDisplayDtos();
     m.addAttribute("recipes", recipes);
     m.addAttribute("event", new EventDto(event));
     m.addAttribute("showJoinEvent", DisplayService.showJoinEvent( event,token));

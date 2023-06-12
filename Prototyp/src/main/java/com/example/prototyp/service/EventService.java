@@ -2,7 +2,9 @@ package com.example.prototyp.service;
 
 import com.example.prototyp.domain.Event;
 import com.example.prototyp.domain.displayDtos.EventDto;
+import com.example.prototyp.persistence.EventRepository;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,7 @@ public class EventService {
   }
 
   public Event findEventbyId(Long id){
-    return repo.findEventById(id);
+    return repo.findEventById(id).orElseThrow(EventNotExistingException::new);
   }
 
   public List<EventDto> getUserEvents(String user) {

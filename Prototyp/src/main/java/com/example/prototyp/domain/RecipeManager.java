@@ -3,9 +3,7 @@ package com.example.prototyp.domain;
 import com.example.prototyp.domain.displayDtos.RecipeDto;
 import com.example.prototyp.domain.forms.RecipeForm;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class RecipeManager {
@@ -15,8 +13,15 @@ public class RecipeManager {
     recipes.add(new Recipe(recipeForm,chef));
   }
 
+  void addRecipe(Long id, String chef, String title, List<String> ingredients, String instructions, String image) {
+    recipes.add(new Recipe(id,chef, title, ingredients, instructions, image));
+  }
 
-  public List<RecipeDto> getRecipes() {
+  public List<RecipeDto> getRecipeDtos() {
     return recipes.stream().map(recipe -> new RecipeDto(recipe)).collect(Collectors.toList());
+  }
+
+  public List<Recipe> getRecipes() {
+    return new ArrayList<Recipe>(recipes);
   }
 }

@@ -1,12 +1,13 @@
-package com.example.prototyp.service;
+package com.example.prototyp.persistence;
 
 import com.example.prototyp.domain.Event;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class FakeEventRepoImpl implements EventRepository{
+public class FakeEventRepoImpl implements EventRepository {
   HashMap<Long, Event> fakeDB =new HashMap<Long, Event>();
   Long idGenerator = Long.valueOf(0);
   @Override
@@ -20,8 +21,8 @@ public class FakeEventRepoImpl implements EventRepository{
   }
 
   @Override
-  public Event findEventById(Long id) {
-    return fakeDB.get(id);
+  public Optional<Event> findEventById(Long id) {
+    return Optional.ofNullable(fakeDB.get(id));
   }
 
   @Override

@@ -7,65 +7,98 @@ import java.util.List;
 
 public class Event {
 
-
   private Long id;
   private final String title;
   private final ParticipantManager participantManager;
   private final Kitchen kitchen;
   private final String date;
-  private final RecipeManager recipeManager= new RecipeManager();
+  private final RecipeManager recipeManager = new RecipeManager();
 
-  public Event(Long id ,String adress, String kitchenImageUrl, String creator, String date, int numberOfParticipants, String title){
-    this.title= title;
-    this.kitchen= new Kitchen(adress,kitchenImageUrl);
-    this.date=date;
-    this.participantManager=new ParticipantManager(numberOfParticipants,creator);
-    this.id =id;
+  public Event(Long id, String adress, String kitchenImageUrl, String creator, String date, int numberOfParticipants,
+      String title) {
+    this.title = title;
+    this.kitchen = new Kitchen(adress, kitchenImageUrl);
+    this.date = date;
+    this.participantManager = new ParticipantManager(numberOfParticipants, creator);
+    this.id = id;
   }
 
-  public static Event of(Integer maxNumberOfParticipants, String title){
-    return new Event(null,null, null, "Creator", null, maxNumberOfParticipants, title);
+  public Event(Long id, String adress, String kitchenImageUrl, String date, int numberOfParticipants, String title) {
+    this.title = title;
+    this.kitchen = new Kitchen(adress, kitchenImageUrl);
+    this.date = date;
+    this.participantManager = new ParticipantManager(numberOfParticipants);
+    this.id = id;
+  }
+
+  public static Event of(Integer maxNumberOfParticipants, String title) {
+    return new Event(null, null, null, "Creator", null, maxNumberOfParticipants, title);
   };
+
   public static Event of(EventForm eventForm, String creator) {
-    return new Event(null, eventForm.kitchenAdress(), eventForm.kitchenImage().getOriginalFilename(), creator, eventForm.date(),
+    return new Event(null, eventForm.kitchenAdress(), eventForm.kitchenImage().getOriginalFilename(), creator,
+        eventForm.date(),
         eventForm.numberOfParticipants(), eventForm.title());
   }
-  //todo: Has to be deleted when the program is connected to web
-  public String getTitle(){
+
+  // todo: Has to be deleted when the program is connected to web
+  public String getTitle() {
     return this.title;
   }
-  public void setId(Long id){this.id = id;}
 
-  public Long getId(){ return this.id ;};
-  public void addParticipant(String name){
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public Long getId() {
+    return this.id;
+  };
+
+  public void addParticipant(String name) {
     participantManager.addParticipant(name);
   }
-  public void addRecipe(String chef, RecipeForm recipeForm){
-    recipeManager.addRecipe(chef,recipeForm);
+
+  public void addRecipe(String chef, RecipeForm recipeForm) {
+    recipeManager.addRecipe(chef, recipeForm);
   }
-  public List<String> getParticipants(){
+
+  public void addRecipe(Long id,String chef, String title, List<String> ingredients, String instructions, String image) {
+    recipeManager.addRecipe(id, chef, title, ingredients, instructions, image);
+  }
+
+  public List<String> getParticipants() {
     return participantManager.getParticipants();
   }
-  public Integer getNumberOfParticipants(){
+
+  public Integer getNumberOfParticipants() {
     return participantManager.getNumberOfParticipants();
   }
-  public Integer getMaxNumberOfParticipants(){
+
+  public Integer getMaxNumberOfParticipants() {
     return participantManager.getMaxNumberOfParticipants();
   }
-  public String getKitchenImageUrl(){
+
+  public String getKitchenImageUrl() {
     return kitchen.getImageUrl();
   }
-  public String getDate(){
+
+  public String getDate() {
     return this.date;
   }
-  public String getAdress(){
+
+  public String getAdress() {
     return kitchen.getAdress();
   }
 
   public Boolean isParticipant(String name) {
     return participantManager.isParticipant(name);
   }
-  public List<RecipeDto> getRecipes(){
+
+  public List<RecipeDto> getRecipeDisplayDtos() {
+    return recipeManager.getRecipeDtos();
+  }
+
+  public List<Recipe> getRecipes() {
     return recipeManager.getRecipes();
   }
 
