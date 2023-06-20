@@ -46,7 +46,7 @@
 
     <div th:if ="${showJoinEvent}" method="post" th:action="@{{eventId}/joinEvent(eventId=${event.id})}">
 
-        <button type="submit" class="btnFull" onclick="window.location.href='../recipePages/createRecipe.html';" th:onclick="|window.location.href='@{/createRecipe}'| " >Join event</button>
+        <button type="submit" class="btnFull" onclick="window.location.href='../recipePages/addRecipe.html';" th:onclick="|window.location.href='@{/createRecipe}'| " >Join event</button>
     </div>
 
 </div>

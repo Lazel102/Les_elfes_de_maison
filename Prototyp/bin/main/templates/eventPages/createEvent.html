@@ -7,10 +7,7 @@
     <link rel="stylesheet" th:href="@{css\style.css}" href="..\..\static\css\style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
     <title>Create Event</title>
 </head>
 <body>
@@ -20,7 +17,6 @@
         <a class="logoutBtn"  onclick="window.location.href='../index.html';" th:action="@{/logout}" method="post">Logout</a>
     </div>
 </nav>
-
 <div class="container">
     <h2>Create Event</h2>
 <form method ="post" th:action="@{createEvent}" th:object ="${eventForm}" enctype="multipart/form-data">
@@ -34,7 +30,10 @@
     <label for="kitchenAdressID">In which district is your kitchen located ?</label>
     <span class="inlineFlex">
     <input class="colHalf" type="number" id="kitchenAdressID" required  th:field="*{kitchenAdress}">
+    <label for="kitchenImageID" class="btnEmpty">Upload kitchen  image</label>
     <button type="button" id="kitchenImageID" class="btnEmpty colHalf" th:Field="*{kitchenImage}" onclick="document.getElementById('kitchenImageID').click()" required>Choose image</button>
+    <label for="kitchenImageID" class="btnEmpty">Upload kitchen  image</label>
+    <input type="file" id="kitchenImageID" required  th:field="*{kitchenImage}">
     </span>
     <label for="kitchenDescription">Describe your event</label>
     <textarea type="text" rows="4" id="kitchenDescription" required  th:field="*{kitchenDescription}"></textarea>

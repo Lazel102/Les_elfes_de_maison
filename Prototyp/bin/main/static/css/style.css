@@ -28,12 +28,24 @@ section{
 }
 
 .logo{
-    display: block;
+     text-align: center;
+    /*
     width:150px;
-    height:150px;border-radius:100px;background-color:white;margin:0 auto 50px;
-    background-image: url("tempImages/asset.png");
+    height:150px;
+    border-radius:100px;
+    background-color:white;
+        background-image: url("tempImages/logo.svg");
     background-size: cover;
+    */
+
 }
+svg{
+    width:250px;
+    margin:0 auto 50px;
+    fill:#e65444;
+}
+
+
 
 h1{
     margin: 20px 0 20px;
@@ -210,7 +222,6 @@ button.btnTiny:hover{
   }
 
   form{
-    display: table;
     margin:0 auto;
     align-items:center ;
   }

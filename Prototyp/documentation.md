@@ -2,14 +2,10 @@
 
 ## Todo
 - Implement a notification in "home.html" : "You haven't registered in any event yet, you can join or create a new event below".
-- Implement a link toward a Registered event without the "Join Event" button in "event.html" (Fresh Event # Registered event).
-- In "event.html" Update the multiple recipe image containers.
+- In "event.html" Implement a link toward a Registered event without the "Join Event" button (Fresh Event # Registered event).
 - In "event.html" Implement the event's description under its title.
 - In "addRecipe.html" and "createEvent.html" CHECK THE PROPER IMPLEMENTATION  of image upload (check push history "Updated IMAGE UPLOAD ??" june 1)
 - In "event.html" and "createEvent" implement button to send to "addRecipe.html".
-- Push gradle.bat.
-- Create MySettings.html (homepage).
-- Include commentary section for each page.
 - Include description for recipes.
 
 ## BUG FIXES
@@ -31,6 +27,8 @@
 - Find new open font.
  
 ## Expantion Ideas
+- Create MySettings.html (user settings).
+- Include commentary section for each page (feedback).
 - Recipes can later be added to userprofil.
 - The users within an event will in the future be able to vote for a date.
 - Previous events can later be displayed in each user's profile
