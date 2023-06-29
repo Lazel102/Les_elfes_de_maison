@@ -27,17 +27,24 @@
     <span class="inlineFlex">
         <input class="colHalf" type="date" id="dateID" required th:field="*{date}">
         <input class="colHalf" type="number" id="numberParticipantsID" required  th:field="*{numberOfParticipants}"></span>
-    <label for="kitchenAdressID">In which district is your kitchen located ?</label>
-    <span class="inlineFlex">
-    <input class="colHalf" type="number" id="kitchenAdressID" required  th:field="*{kitchenAdress}">
-    <label for="kitchenImageID" class="btnEmpty">Upload kitchen  image</label>
-    <button type="button" id="kitchenImageID" class="btnEmpty colHalf" th:Field="*{kitchenImage}" onclick="document.getElementById('kitchenImageID').click()" required>Choose image</button>
-    <label for="kitchenImageID" class="btnEmpty">Upload kitchen  image</label>
-    <input type="file" id="kitchenImageID" required  th:field="*{kitchenImage}">
     </span>
+    <span class="inlineFlex">
+        <label class="colHalf" for="kitchenAdressID">In which district is your kitchen located ?</label>
+        <label for="kitchenImageUrlID">Upload kitchen image</label>
+    </span>
+    <span class="inlineFlex">
+        <input class="colHalf" type="number" id="kitchenAdressID" required  th:field="*{kitchenAdress}">
+        <input type="file" id="KitchenImageUrlID" name="kitchenImageURL" th:field="*{kitchenImage}" required>
+        <button type="button" class="btnEmpty" onclick="document.getElementById('KitchenImageUrlID').click()">Choose File</button>
+        
+    </span>
+   
+
+
+    
     <label for="kitchenDescription">Describe your event</label>
     <textarea type="text" rows="4" id="kitchenDescription" required  th:field="*{kitchenDescription}"></textarea>
-    <button class="btnFull" type="submit">Create Event </button>
+    <button onclick="window.location.href='../recipePages/addRecipe.html';" class="btnFull" type="submit">Create Event </button>
 </form>
 </div>
 </body>

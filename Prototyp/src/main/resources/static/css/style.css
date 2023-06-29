@@ -145,7 +145,7 @@ a.logoutBtn{
     margin-left:auto;
 }
 
-button,label.btnFull{
+button{
     display: inline-block;
     border-radius:25px;
     padding: 10px 25px;
@@ -166,7 +166,7 @@ button:hover{
     box-shadow:none
 }
 
-button.btnFull, label.btnFull{
+button.btnFull{
     transition:0.2s;
     background-color: #927dff;
     color:#f0f1f5;
@@ -206,7 +206,7 @@ button.btnTiny:hover{
 }
 
 
-.btnFileUpload input[type="file"] {
+input[type="file"] {
     display: none !important;
 }
 
