@@ -80,6 +80,7 @@ public class WebController {
     Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, recipeForm.image().getOriginalFilename());
     Files.write(fileNameAndPath,recipeForm.image().getBytes());
     event.addRecipe(token.getName(), recipeForm);
+    Long id = eventService.saveEvent(event);
     return "redirect:/home";
   }
   @GetMapping("event/{eventId}")

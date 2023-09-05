@@ -7,6 +7,7 @@
 - In "addRecipe.html" and "createEvent.html" CHECK THE PROPER IMPLEMENTATION  of image upload (check push history "Updated IMAGE UPLOAD ??" june 1)
 - In "event.html" and "createEvent" implement button to send to "addRecipe.html".
 - Include description for recipes.
+- Add preview of Image when creating an event and recipes are added.
 
 ## BUG FIXES
 - In "joinEvent" Check the implementation of submit button: is it necessary to have "th:action="@{{eventId}/joinEvent(eventId=${event.id})}" and "th:onclick="|window.location.href='@{/createRecipe}'| "

@@ -3,6 +3,7 @@ package com.example.prototyp.domain;
 import com.example.prototyp.domain.displayDtos.RecipeDto;
 import com.example.prototyp.domain.forms.EventForm;
 import com.example.prototyp.domain.forms.RecipeForm;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Event {
@@ -11,22 +12,24 @@ public class Event {
   private final String title;
   private final ParticipantManager participantManager;
   private final Kitchen kitchen;
-  private final String date;
+  private final LocalDate datum;
   private final RecipeManager recipeManager = new RecipeManager();
 
-  public Event(Long id, String adress, String kitchenImageUrl, String creator, String date, int numberOfParticipants,
+  //todo: Make sure only one constructor remains. This can be fixed within the static factory method.
+  public Event(Long id, String adress, String kitchenImageUrl, String creator, LocalDate datum, int numberOfParticipants,
       String title) {
     this.title = title;
     this.kitchen = new Kitchen(adress, kitchenImageUrl);
-    this.date = date;
+    this.datum = datum;
     this.participantManager = new ParticipantManager(numberOfParticipants, creator);
     this.id = id;
   }
 
-  public Event(Long id, String adress, String kitchenImageUrl, String date, int numberOfParticipants, String title) {
+
+  public Event(Long id, String adress, String kitchenImageUrl, LocalDate date, int numberOfParticipants, String title) {
     this.title = title;
     this.kitchen = new Kitchen(adress, kitchenImageUrl);
-    this.date = date;
+    this.datum = date;
     this.participantManager = new ParticipantManager(numberOfParticipants);
     this.id = id;
   }
@@ -37,7 +40,7 @@ public class Event {
 
   public static Event of(EventForm eventForm, String creator) {
     return new Event(null, eventForm.kitchenAdress(), eventForm.kitchenImage().getOriginalFilename(), creator,
-        eventForm.date(),
+        eventForm.datum(),
         eventForm.numberOfParticipants(), eventForm.title());
   }
 
@@ -62,8 +65,8 @@ public class Event {
     recipeManager.addRecipe(chef, recipeForm);
   }
 
-  public void addRecipe(Long id,String chef, String title, List<String> ingredients, String instructions, String image) {
-    recipeManager.addRecipe(id, chef, title, ingredients, instructions, image);
+  public void addRecipe(String chef, String title, List<String> ingredients, String instructions, String image) {
+    recipeManager.addRecipe( chef, title, ingredients, instructions, image);
   }
 
   public List<String> getParticipants() {
@@ -82,8 +85,8 @@ public class Event {
     return kitchen.getImageUrl();
   }
 
-  public String getDate() {
-    return this.date;
+  public LocalDate getDatum() {
+    return this.datum;
   }
 
   public String getAdress() {
@@ -105,4 +108,5 @@ public class Event {
   public Boolean isFull() {
     return participantManager.isFull();
   }
+
 }
