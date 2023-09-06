@@ -1,20 +1,18 @@
 # Documentation
 
 ## Todo
-- Implement a notification in "home.html" : "You haven't registered in any event yet, you can join or create a new event below".
+- In "createEvent.html" ansd "addRecipe.html" add a preview of the uploaded image or image title
+- In "home.html" implement a notification : "You haven't registered in any event yet, you can join or create a new event below".
 - In "event.html" Implement a link toward a Registered event without the "Join Event" button (Fresh Event # Registered event).
 - In "event.html" Implement the event's description under its title.
-- In "addRecipe.html" and "createEvent.html" CHECK THE PROPER IMPLEMENTATION  of image upload (check push history "Updated IMAGE UPLOAD ??" june 1)
-- In "event.html" and "createEvent" implement button to send to "addRecipe.html".
-- Include description for recipes.
+- In "recipe.html" Implement the recipe's description.
+- **In "addRecipe.html" and "createEvent.html" check if image upload works(push history "Updated IMAGE UPLOAD ??" june 1)**
+- **In "event.html" and "createEvent" implement button to send to "addRecipe.html". V**
 
 ## BUG FIXES
-- In "joinEvent" Check the implementation of submit button: is it necessary to have "th:action="@{{eventId}/joinEvent(eventId=${event.id})}" and "th:onclick="|window.location.href='@{/createRecipe}'| "
+- Fix "date" issue with database.
 - Input type="number" can still be filled with "e" letters.
 - Set a maximum character number for {event.title}, {recipes}, {numberOfParticipants}, {kitchenAdress}.
-- Regarding Backend's developement: What was the reason why we can't use "href=" to link a <button> or <a> for compatibility with thymeLeaf?
-- What is the purpose of "th:remove="all-but-first" in joinEvent.html ?
-- How to generate a new class='eventContainer' in joinevent.html every time a user creates one ?
 
 ## Notes
 - In the ressources folder in future updates is a folder with possible future templates.
