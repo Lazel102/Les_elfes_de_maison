@@ -1,8 +1,10 @@
 package com.example.prototyp.security;
 
 import java.util.Collection;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,32 +17,17 @@ import java.util.Set;
 public class UserService implements UserDetailsService {
 
   private final UserRepository userRepository;
-  private final RoleRepository roleRepository;
+
 
   @Autowired
-  public UserService(UserRepository userRepository, RoleRepository roleRepository) {
+  public UserService(UserRepository userRepository) {
     this.userRepository = userRepository;
-    this.roleRepository = roleRepository;
   }
 
   public void saveUser(User user, PasswordEncoder passwordEncoder) {
-    String encodedPassword = passwordEncoder.encode(user.getPassword());
-    user.setPassword(encodedPassword);
-
-    Set<Role> userRoles = new HashSet<>();
-    // Assign the default role to the user
-    Role defaultRole = roleRepository.findByName("USER");
-    if (defaultRole != null) {
-      userRoles.add(defaultRole);
-    } else {
-      // Create a new role if it doesn't exist in the database
-      defaultRole = new Role();
-      defaultRole.setName("USER");
-      roleRepository.save(defaultRole);
-      userRoles.add(defaultRole);
-    }
-    user.setRoles(userRoles);
-    userRepository.save(user);
+    String encodedPassword = passwordEncoder.encode(user.password());
+    User userToSave = new User(user.id(), user.username(), encodedPassword);
+    userRepository.save(userToSave);
   }
 
   @Override
@@ -50,8 +37,8 @@ public class UserService implements UserDetailsService {
       throw new UsernameNotFoundException("User not found");
     }
     return new org.springframework.security.core.userdetails.User(
-        user.getUsername(),
-        user.getPassword(),
-        (Collection<? extends GrantedAuthority>) user.getRoles());
+        user.username(),
+        user.password(),
+        List.of(new SimpleGrantedAuthority("ROLE_ADMIN")));
   }
 }

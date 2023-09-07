@@ -13,8 +13,8 @@ public class RecipeManager {
     recipes.add(new Recipe(recipeForm,chef));
   }
 
-  void addRecipe(Long id, String chef, String title, List<String> ingredients, String instructions, String image) {
-    recipes.add(new Recipe(id,chef, title, ingredients, instructions, image));
+  void addRecipe( String chef, String title, List<String> ingredients, String instructions, String image) {
+    recipes.add(new Recipe(chef, title, ingredients, instructions, image));
   }
 
   public List<RecipeDto> getRecipeDtos() {

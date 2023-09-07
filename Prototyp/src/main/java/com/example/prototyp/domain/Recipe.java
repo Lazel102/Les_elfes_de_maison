@@ -4,7 +4,7 @@ import com.example.prototyp.domain.forms.RecipeForm;
 import java.util.List;
 
 public class Recipe {
-  private final Long id;
+
   private final String title;
   private final List<String> ingredients;
   private final String instruction;
@@ -13,7 +13,6 @@ public class Recipe {
   private final String chef;
 
   Recipe(RecipeForm recipeForm, String chef) {
-    this.id = null;
     this.chef = chef;
     this.title = recipeForm.title();
     this.ingredients = recipeForm.ingredients();
@@ -22,8 +21,7 @@ public class Recipe {
 
   }
 
-  public Recipe(Long id, String chef, String title, List<String> ingredients, String instructions, String image) {
-    this.id = id;
+  public Recipe( String chef, String title, List<String> ingredients, String instructions, String image) {
     this.chef = chef;
     this.title = title;
     this.ingredients = ingredients;
@@ -31,9 +29,7 @@ public class Recipe {
     this.imageUrl = image;
   }
 
-  public Long getId() {
-    return this.id;
-  }
+
 
   public String getTitle() {
     return title;

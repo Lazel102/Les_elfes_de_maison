@@ -8,15 +8,11 @@ repositories {
 }
 
 dependencies {
-
-
-
 	//Persistence
 	implementation 'org.flywaydb:flyway-core'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 
 	//Web
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -29,17 +25,14 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 
-
-
 	//domain
-
-
-
-
-
-
-
-
+	//Testing
+	testImplementation 'com.tngtech.archunit:archunit-junit5-engine:1.0.1'
+	testImplementation 'org.assertj:assertj-core:3.23.1'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
 }
 
-
+test {
+	useJUnitPlatform()
+}

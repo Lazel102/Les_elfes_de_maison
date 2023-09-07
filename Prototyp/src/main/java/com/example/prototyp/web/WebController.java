@@ -43,6 +43,7 @@ public class WebController {
     List<EventDto> userEvents= eventService.getUserEvents(token.getName());
     m.addAttribute("events", userEvents);
     m.addAttribute( "username",token.getName());
+    m.addAttribute("userHasNoEvents",userEvents.isEmpty());
     return "home";
   }
   @GetMapping("/joinEvent")
@@ -80,6 +81,7 @@ public class WebController {
     Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, recipeForm.image().getOriginalFilename());
     Files.write(fileNameAndPath,recipeForm.image().getBytes());
     event.addRecipe(token.getName(), recipeForm);
+    Long id = eventService.saveEvent(event);
     return "redirect:/home";
   }
   @GetMapping("event/{eventId}")

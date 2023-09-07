@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.data:spring-data-relational:2.2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-relational/2.2.1/1d243037566828fbbafcf3ba51223cbaf59108b9/spring-data-relational-2.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-relational/2.2.1/cf7a22a998798f0d763dfec1d210af85a65ce978/spring-data-relational-2.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
