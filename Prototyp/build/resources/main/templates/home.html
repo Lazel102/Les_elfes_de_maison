@@ -22,6 +22,7 @@
     <div class="container">
 
     <h2>My Events</h2>
+        <a th:if="${userHasNoEvents}">You haven't joined any events yet. You can join events below.</a>
 
     <div class="eventGroupContainer">
        <!-- todo : Implemente this  : <div th:if ="" th:action="">

@@ -43,6 +43,7 @@ public class WebController {
     List<EventDto> userEvents= eventService.getUserEvents(token.getName());
     m.addAttribute("events", userEvents);
     m.addAttribute( "username",token.getName());
+    m.addAttribute("userHasNoEvents",userEvents.isEmpty());
     return "home";
   }
   @GetMapping("/joinEvent")
