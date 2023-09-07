@@ -25,7 +25,7 @@
     <span class="inlineFlex"><label class="colHalf" for="dateID"> Choose a date</label><label class="colHalf" for="numberParticipantsID">Participants</label>
  </span>
     <span class="inlineFlex">
-        <input class="colHalf" type="date" id="dateID" required th:field="*{date}">
+        <input class="colHalf" type="date" id="dateID" required th:field="*{datum}">
         <input class="colHalf" type="number" id="numberParticipantsID" required  th:field="*{numberOfParticipants}"></span>
     </span>
     <span class="inlineFlex">
@@ -40,9 +40,10 @@
     </span>
 
     
-    <label for="kitchenDescription">Describe your event</label>
-    <textarea type="text" rows="4" id="kitchenDescription" required  th:field="*{kitchenDescription}"></textarea>
-    <button onclick="window.location.href='../recipePages/addRecipe.html';" class="btnFull" type="submit">Create Event </button>
+    <!-- todo: Discuss with Yassine if we nned this : <label for="kitchenDescription">Describe your event</label>
+    <textarea type="text" rows="4" id="kitchenDescription" required  th:field="*{kitchenDescription}"></textarea>-->
+    <!--<button th:onclick="|window.location.href='@{/createEvent}'|" onclick="window.location.href='../recipePages/addRecipe.html'" class="btnFull" type="submit">Create Event </button>-->
+    <button class="btnFull" type="submit">Create Event </button>
 </form>
 </div>
 </body>
