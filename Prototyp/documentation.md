@@ -1,7 +1,7 @@
 # Documentation
 
 ## Todo
-- Implement a notification in "home.html" : "You haven't registered in any event yet, you can join or create a new event below".
+- Implement a notification in "home.html" : "You haven't registered in any event yet, you can join or create a new event below". (Done from the side of the backend, might need adaptions from the front end.)
 - In "event.html" Implement a link toward a Registered event without the "Join Event" button (Fresh Event # Registered event).
 - In "event.html" Implement the event's description under its title.
 - In "addRecipe.html" and "createEvent.html" CHECK THE PROPER IMPLEMENTATION  of image upload (check push history "Updated IMAGE UPLOAD ??" june 1)
@@ -16,6 +16,7 @@
 - Regarding Backend's developement: What was the reason why we can't use "href=" to link a <button> or <a> for compatibility with thymeLeaf?
 - What is the purpose of "th:remove="all-but-first" in joinEvent.html ?
 - How to generate a new class='eventContainer' in joinevent.html every time a user creates one ?
+- Currently join event does not work.
 
 ## Notes
 - In the ressources folder in future updates is a folder with possible future templates.
