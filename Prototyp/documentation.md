@@ -16,7 +16,7 @@
 - Regarding Backend's developement: What was the reason why we can't use "href=" to link a <button> or <a> for compatibility with thymeLeaf?
 - What is the purpose of "th:remove="all-but-first" in joinEvent.html ?
 - How to generate a new class='eventContainer' in joinevent.html every time a user creates one ?
-- Currently join event does not work.
+
 
 ## Notes
 - In the ressources folder in future updates is a folder with possible future templates.
