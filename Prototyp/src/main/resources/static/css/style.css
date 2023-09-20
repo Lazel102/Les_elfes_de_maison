@@ -28,15 +28,14 @@ section{
 }
 
 .logo{
+    margin:0 auto;
      text-align: center;
-    /*
-    width:150px;
-    height:150px;
+    width:180px;
+    height:180px;
     border-radius:100px;
-    background-color:white;
+   /* background-color:white;
         background-image: url("tempImages/logo.svg");
-    background-size: cover;
-    */
+    background-size: cover;*/
 
 }
 svg{
