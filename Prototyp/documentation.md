@@ -6,14 +6,12 @@
 - In "addRecipe.html" and "createEvent.html" CHECK THE PROPER IMPLEMENTATION  of image upload (check push history "Updated IMAGE UPLOAD ??" june 1)
 - In "event.html" and "createEvent" implement button to send to "addRecipe.html". (Does not make sense regarding the logic : 1 Person 1 Recipe)
 - Add preview of Image when creating an event and recipes are added.
+- Set a maximum character number for {event.title}, {recipes}, {numberOfParticipants}, {kitchenAdress} (50).
+- verify that e can not be used as number in type="number" inputs.
+- Implement Logout
 
 ## BUG FIXES
-- Problem with css File for event. I checked and it is definitively a problem with the frontend and not the backend. Copying the header from a different page, for instance add Recipe fixes the problem but I don't know if this is the proper way of solving it.
-- Input type="number" can still be filled with "e" letters.
-- Set a maximum character number for {event.title}, {recipes}, {numberOfParticipants}, {kitchenAdress}.
-- Regarding Backend's developement: What was the reason why we can't use "href=" to link a <button> or <a> for compatibility with thymeLeaf?
-- What is the purpose of "th:remove="all-but-first" in joinEvent.html ?
-- How to generate a new class='eventContainer' in joinevent.html every time a user creates one ?
+
 
 
 ## Notes

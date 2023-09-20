@@ -5,6 +5,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 
 public class DisplayService {
   public static boolean showJoinEvent(Event event, UsernamePasswordAuthenticationToken token){
-    return !(event.isParticipant(token.getName()) && event.isFull());
+    return !(event.isParticipant(token.getName()) || event.isFull());
   }
 }
