@@ -22,6 +22,8 @@
 <form method ="post" th:action="@{createEvent}" th:object ="${eventForm}" enctype="multipart/form-data">
     <label for="titleID"> Choose a title for your event</label>
     <input type="text" id="titleID" required th:field="*{title}">
+    <label for="titleID"> Describe your event</label>
+    <input type="text" id="titleID" required th:field="*{description}">
     <span class="inlineFlex"><label class="colHalf" for="dateID"> Choose a date</label><label class="colHalf" for="numberParticipantsID">Participants</label>
  </span>
     <span class="inlineFlex">
