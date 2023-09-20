@@ -15,6 +15,7 @@ CREATE TABLE users (
 CREATE TABLE event (
                        id serial primary key,
                        title VARCHAR(255) NOT NULL,
+                       description VARCHAR(255) NOT NULL,
                        kitchen_address VARCHAR(255) NOT NULL,
                        kitchen_image_url VARCHAR(255),
                        number_of_participants INTEGER,
@@ -26,6 +27,7 @@ CREATE TABLE recipe (
                         id serial PRIMARY KEY,
                         chef VARCHAR(255) NOT NULL,
                         title VARCHAR(255) NOT NULL,
+                        description VARCHAR(255) NOT NULL,
                         ingredients TEXT NOT NULL,
                         instructions TEXT NOT NULL,
                         event bigint,
