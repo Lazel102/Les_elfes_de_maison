@@ -27,6 +27,7 @@
     </div>
     <section>
         <h3 th:text="${event.title}"> Sparkles of middle east</h3>
+        <h3 th:text="${event.description}"> a wonderful event</h3>
 <!--<p class="description" th:field="*{kitchenDescription}"></p>-->
         <h3 th:text="${event.date}"> 05 March 2023</h3>
         <h3 th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 Participants </h3>
@@ -39,6 +40,7 @@
             <div class="participantDescription">
                 <h3 th:text="${recipe.chef}">Germaine</h3>
                 <p class="description" th:text="${recipe.title}">Parmigiana</p>
+                <p class="description" th:text="${recipe.description}">Parmigiana</p>
             </div>
         
     </div>

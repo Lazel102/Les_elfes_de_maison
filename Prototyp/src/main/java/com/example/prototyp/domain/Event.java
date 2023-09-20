@@ -10,6 +10,8 @@ public class Event {
 
   private Long id;
   private final String title;
+
+  private final String description;
   private final ParticipantManager participantManager;
   private final Kitchen kitchen;
   private final LocalDate datum;
@@ -17,8 +19,9 @@ public class Event {
 
   //todo: Make sure only one constructor remains. This can be fixed within the static factory method.
   public Event(Long id, String adress, String kitchenImageUrl, String creator, LocalDate datum, int numberOfParticipants,
-      String title) {
+               String title, String description) {
     this.title = title;
+    this.description = description;
     this.kitchen = new Kitchen(adress, kitchenImageUrl);
     this.datum = datum;
     this.participantManager = new ParticipantManager(numberOfParticipants, creator);
@@ -26,8 +29,10 @@ public class Event {
   }
 
 
-  public Event(Long id, String adress, String kitchenImageUrl, LocalDate date, int numberOfParticipants, String title) {
+  public Event(Long id, String adress, String kitchenImageUrl, LocalDate date, int numberOfParticipants, String title,
+               String description) {
     this.title = title;
+    this.description = description;
     this.kitchen = new Kitchen(adress, kitchenImageUrl);
     this.datum = date;
     this.participantManager = new ParticipantManager(numberOfParticipants);
@@ -35,13 +40,13 @@ public class Event {
   }
 
   public static Event of(Integer maxNumberOfParticipants, String title) {
-    return new Event(null, null, null, "Creator", null, maxNumberOfParticipants, title);
+    return new Event(null, null, null, "Creator", null, maxNumberOfParticipants, title, null);
   };
 
   public static Event of(EventForm eventForm, String creator) {
     return new Event(null, eventForm.kitchenAdress(), eventForm.kitchenImage().getOriginalFilename(), creator,
         eventForm.datum(),
-        eventForm.numberOfParticipants(), eventForm.title());
+        eventForm.numberOfParticipants(), eventForm.title(), eventForm.description());
   }
 
   // todo: Has to be deleted when the program is connected to web
@@ -65,8 +70,8 @@ public class Event {
     recipeManager.addRecipe(chef, recipeForm);
   }
 
-  public void addRecipe(String chef, String title, List<String> ingredients, String instructions, String image) {
-    recipeManager.addRecipe( chef, title, ingredients, instructions, image);
+  public void addRecipe(String chef, String title, List<String> ingredients, String instructions, String image, String description) {
+    recipeManager.addRecipe( chef, title, ingredients, instructions, image, description);
   }
 
   public List<String> getParticipants() {
@@ -103,6 +108,9 @@ public class Event {
 
   public List<Recipe> getRecipes() {
     return recipeManager.getRecipes();
+  }
+  public String getDescription() {
+    return description;
   }
 
   public Boolean isFull() {

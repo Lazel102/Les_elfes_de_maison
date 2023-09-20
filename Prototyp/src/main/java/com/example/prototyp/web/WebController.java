@@ -55,7 +55,7 @@ public class WebController {
 
   @GetMapping("/createEvent")
   public String createEvent(Model model){
-    model.addAttribute("eventForm",new EventForm(null,null,null,null,null) );
+    model.addAttribute("eventForm",new EventForm(null,null,null,null,null,null) );
     return "eventPages/createEvent";
   }
 

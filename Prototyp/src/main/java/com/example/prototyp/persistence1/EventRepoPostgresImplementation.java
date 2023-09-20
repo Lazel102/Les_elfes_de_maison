@@ -30,10 +30,11 @@ public class EventRepoPostgresImplementation implements EventRepository {
 
   private com.example.prototyp.domain.Event fromDto(Event event) {
     com.example.prototyp.domain.Event domainEvent = new com.example.prototyp.domain.Event(event.id(),
-        event.kitchen_address(), event.kitchen_image_url(), event.datum(), event.numberOfParticipants(), event.title());
+        event.kitchen_address(), event.kitchen_image_url(), event.datum(), event.numberOfParticipants(), event.title(),
+        event.description());
     event.recipes().stream().forEach(r -> domainEvent.addParticipant(r.chef()));
     event.recipes().stream()
-        .forEach(r -> domainEvent.addRecipe( r.chef(), r.title(), DtoConversionService.convertIngredientStringToList(r.ingredients()), r.instructions(), r.image()));
+        .forEach(r -> domainEvent.addRecipe( r.chef(), r.title(), DtoConversionService.convertIngredientStringToList(r.ingredients()), r.instructions(), r.image(), r.description()));
     return domainEvent;
   }
 
@@ -45,9 +46,9 @@ public class EventRepoPostgresImplementation implements EventRepository {
 
   private Event toDto(com.example.prototyp.domain.Event event) {
     List<Recipe> recipes = event.getRecipes().stream().map(r -> new Recipe( null, r.getChef(), r.getTitle(),
-        r.getIngredients().toString(), r.getInstruction(), r.getImage())).collect(Collectors.toList());
+        r.getIngredients().toString(), r.getInstruction(), r.getImage(), r.getDescription())).collect(Collectors.toList());
     return new Event(event.getId(), event.getTitle(), recipes, event.getAdress(),
-        event.getKitchenImageUrl(), event.getMaxNumberOfParticipants(), event.getDatum());
+        event.getKitchenImageUrl(), event.getMaxNumberOfParticipants(), event.getDatum(),event.getDescription());
   }
 
 }

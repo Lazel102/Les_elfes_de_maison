@@ -11,6 +11,7 @@ public class Recipe {
   private final String imageUrl;
 
   private final String chef;
+  private final String description;
 
   Recipe(RecipeForm recipeForm, String chef) {
     this.chef = chef;
@@ -18,15 +19,17 @@ public class Recipe {
     this.ingredients = recipeForm.ingredients();
     this.instruction = recipeForm.instruction();
     this.imageUrl = recipeForm.image().getOriginalFilename();
+    this.description = recipeForm.description();
 
   }
 
-  public Recipe( String chef, String title, List<String> ingredients, String instructions, String image) {
+  public Recipe( String chef, String title, List<String> ingredients, String instructions, String image, String description) {
     this.chef = chef;
     this.title = title;
     this.ingredients = ingredients;
     this.instruction = instructions;
     this.imageUrl = image;
+    this.description=description;
   }
 
 
@@ -49,5 +52,9 @@ public class Recipe {
 
   public String getChef() {
     return chef;
+  }
+
+  public String getDescription() {
+    return description;
   }
 }

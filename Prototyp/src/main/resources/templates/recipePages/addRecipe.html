@@ -51,7 +51,8 @@
 <form th:action="@{/event/{eventId}/addRecipe(eventId=${eventId})}" th:object="${recipeForm}" method="post" enctype="multipart/form-data">
     <label for="recipeTitleID">Recipe title</label>
     <input type="text" id="recipeTitleID" name="title" th:field="*{title}" required>
-    
+    <label for="recipeTitleID">Recipe Description</label>
+    <input type="text" id="recipeDescriptionID" name="description" th:field="*{description}" required>
     <label for="ingredientID">Ingredient</label>
     <div class="inputContainer">
         <span class="addIngredient">

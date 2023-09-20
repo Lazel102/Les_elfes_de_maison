@@ -19,14 +19,16 @@ class PersistenceTest {
   @Test
   @DisplayName("Ein Event kann hinzugefügt werden")
   void test_1() {
-    Event event = new Event(null, "Invalides", "Desktop", LocalDate.of(2022,2,1),4, "Napoleon's Kitchen Elves" );
+    Event event = new Event(null, "Invalides", "Desktop", LocalDate.of(2022,2,1),4, "Napoleon's Kitchen Elves",
+        description);
     Long id = eventRepo.saveEvent(event);
     assertThat(id).isEqualTo(1);
   }
   @Test
   @DisplayName("Event can be loaded from database")
   void test_2() {
-    Event event = new Event(null, "Invalides", "Desktop", LocalDate.of(2022,2,1),4, "Napoleon's Kitchen Elves" );
+    Event event = new Event(null, "Invalides", "Desktop", LocalDate.of(2022,2,1),4, "Napoleon's Kitchen Elves",
+        description);
     Long id = eventRepo.saveEvent(event);
     Optional<Event> event_new = eventRepo.findEventById(id);
     assertThat(event_new.get().getAdress()).isEqualTo("Invalides");
@@ -34,7 +36,8 @@ class PersistenceTest {
   @Test
   @DisplayName("Events with recipes can be added to the database")
   void test_3() {
-    Event event = new Event(null, "Invalides", "Desktop", LocalDate.of(2022,2,1),4, "Napoleon's Kitchen Elves" );
+    Event event = new Event(null, "Invalides", "Desktop", LocalDate.of(2022,2,1),4, "Napoleon's Kitchen Elves",
+        description);
     event.addRecipe("Yassine","lasagne", List.of("Tomatoes","Meat","Pasta"),"Cook not to long and not to short","path/to/image.png");
     Long id = eventRepo.saveEvent(event);
     Optional<Event> event_new = eventRepo.findEventById(id);
@@ -44,8 +47,10 @@ class PersistenceTest {
   @Test
   @DisplayName("Multiple Events can be loaded from the database")
   void test_4() {
-    Event event1 = new Event(null, "Invalides", "Desktop", LocalDate.of(2022,2,1),4, "Napoleon's Kitchen Elves" );
-    Event event2 = new Event(null, "Invalides", "Desktop", LocalDate.of(2022,2,1),4, "Napoleon's Kitchen Elves" );
+    Event event1 = new Event(null, "Invalides", "Desktop", LocalDate.of(2022,2,1),4, "Napoleon's Kitchen Elves",
+        description);
+    Event event2 = new Event(null, "Invalides", "Desktop", LocalDate.of(2022,2,1),4, "Napoleon's Kitchen Elves",
+        description);
     event1.addRecipe("Yassine","lasagne", List.of("Tomatoes","Meat","Pasta"),"Cook not to long and not to short","path/to/image.png");
     event2.addRecipe("Yassine","lasagne", List.of("Tomatoes","Meat","Pasta"),"Cook not to long and not to short","path/to/image.png");
     Long id1 = eventRepo.saveEvent(event1);

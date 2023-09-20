@@ -8,9 +8,12 @@ public record Recipe (@Id Long id,
                       String title,
                       String ingredients, // todo: Ingredients is saved as a String, so we need to ensure that there is no "," in each ingredient string
                       String instructions,
-                      String image
+                      String image,
+                      String description
 )
-{ }
+{
+
+}
 
 
 
