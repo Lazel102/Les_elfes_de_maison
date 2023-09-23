@@ -24,27 +24,29 @@
     <input type="text" id="titleID" required th:field="*{title}">
     <label for="titleID"> Describe your event</label>
     <input type="text" id="titleID" required th:field="*{description}">
-    <span class="inlineFlex"><label class="colHalf" for="dateID"> Choose a date</label><label class="colHalf" for="numberParticipantsID">Participants</label>
+    <span class="inlineFlex"><label class="colHalf" for="dateID"> Choose a date</label><label class="colHalf" for="numberParticipantsID">N° of participants</label>
  </span>
     <span class="inlineFlex">
         <input class="colHalf" type="date" id="dateID" required th:field="*{datum}">
         <input class="colHalf" type="number" id="numberParticipantsID" required  th:field="*{numberOfParticipants}"></span>
     </span>
     <span class="inlineFlex">
-        <label class="colHalf" for="kitchenAdressID">In which district is your kitchen located ?</label>
-        <label for="kitchenImageUrlID">Upload kitchen image</label>
+        <label class="colHalf" for="kitchenAdressID">Arrondissement</label>
+        <label for="kitchenImageUrlID">Kitchen image</label>
     </span>
     <span class="inlineFlex">
         <input class="colHalf" type="number" id="kitchenAdressID" required  th:field="*{kitchenAdress}">
         <input type="file" id="KitchenImageUrlID" name="kitchenImageURL" th:field="*{kitchenImage}" required>
         <button type="button" class="btnEmpty" onclick="document.getElementById('KitchenImageUrlID').click()">Choose File</button>
-        
+    
     </span>
+    <div class="imgContainer imgPreview"><img class="kitchenImage" th:src="@{/images/__${event.kitchenImage}__}" src="https://picsum.photos/400/304" alt="The picture you have chosen for your kitchen"></div> 
 
     
     <!-- todo: Discuss with Yassine if we nned this : <label for="kitchenDescription">Describe your event</label>
     <textarea type="text" rows="4" id="kitchenDescription" required  th:field="*{kitchenDescription}"></textarea>-->
     <!--<button th:onclick="|window.location.href='@{/createEvent}'|" onclick="window.location.href='../recipePages/addRecipe.html'" class="btnFull" type="submit">Create Event </button>-->
+
     <button class="btnFull" type="submit">Create Event </button>
 </form>
 </div>

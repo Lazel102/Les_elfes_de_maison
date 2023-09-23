@@ -30,7 +30,7 @@
         </div>-->
 <div th:each="event:${events}">
     <div class="eventContainer" onclick="window.location.href='eventPages/event.html';" th:onclick="|window.location.href='@{event/{eventId}(eventId=${event.id})}'| ">
-       <div class="imgContainer"><img class="kitchenImage" th:src="@{/images/__${event.kitchenImage}__}" src="https://cdn3.photoblogstop.com/wp-content/uploads/2012/07/Sierra_HDR_Panorama_DFX8048_2280x819_Q40_wm_mini.jpg" alt="A picture of fellow elf's kitchen"></div> 
+       <div class="imgContainer"><img class="kitchenImage" th:src="@{/images/__${event.kitchenImage}__}" src="https://picsum.photos/600/300" alt="A picture of fellow elf's kitchen"></div> 
             <ul class="indent">
                 <li><h3 th:text="${event.title}">Sparkles of middle east</h3></li>
                 <li th:text="${event.numberOfParticipants+'/'+event.maxNumberOfParticipants+' participants'}"> 5/6 participants </li>

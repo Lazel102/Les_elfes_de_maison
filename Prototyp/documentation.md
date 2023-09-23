@@ -1,6 +1,8 @@
 # Documentation
 
 ## Todo
+- Verify that in "createEvent.html" & "createReciepe.html" the image preview works.
+- Verify how multiple registered participants are displayed in "event.html".
 - Implement a notification in "home.html" : "You haven't registered in any event yet, you can join or create a new event below". (Done from the side of the backend, might need adaptions from the front end.)
 - In "event.html" Implement a link toward a Registered event without the "Join Event" button (Fresh Event # Registered event).
 - In "addRecipe.html" and "createEvent.html" CHECK THE PROPER IMPLEMENTATION  of image upload (check push history "Updated IMAGE UPLOAD ??" june 1)
@@ -11,8 +13,7 @@
 - Implement Logout
 
 ## BUG FIXES
-
-
+-Fix the image height for class "eventContainer" in "home.html"
 
 ## Notes
 - In the ressources folder in future updates is a folder with possible future templates.
