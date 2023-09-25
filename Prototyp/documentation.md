@@ -1,6 +1,7 @@
 # Documentation
 
 ## Todo
+- Setup error page 404
 - Verify that in "createEvent.html" & "createReciepe.html" the image preview works.
 - Verify how multiple registered participants are displayed in "event.html".
 - Implement a notification in "home.html" : "You haven't registered in any event yet, you can join or create a new event below". (Done from the side of the backend, might need adaptions from the front end.)
@@ -16,7 +17,9 @@
 -Fix the image height for class "eventContainer" in "home.html"
 
 ## Notes
+- Check Security Certificate When hosted
 - In the ressources folder in future updates is a folder with possible future templates.
+
 
 ## Design
 - Check consistency on different pages.
